@@ -268,3 +268,120 @@ body {
     }
 }
 
+/* --------------Services----------------*/
+
+.services-container {
+    padding: 0 3rem 0;
+}
+
+.service-text-div {
+    padding: 2rem;
+}
+
+.first-service {
+    padding-top: 3rem;
+}
+
+.services-heading {
+    font-size: 4rem;
+}
+
+.services-sub-heading {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.service-strap-line {
+    font-size: 1.4rem;
+}
+
+.service-img {
+    height: auto;
+    width: 100%;
+    margin: auto;
+}
+
+.service-text {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .services-sub-heading {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }   
+    
+    .service-strap-line {
+        font-size: 1.1rem;
+    }
+
+    .service-text {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .services-container {
+        padding: 0;
+    }
+    
+    .services-sub-heading {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }   
+    
+    .service-strap-line {
+        font-size: 1.1rem;
+    }
+
+    .service-text {
+        font-size: 1rem;
+    }
+
+    .service-img {
+        display: none;
+    }
+
+    .right-align {
+        text-align: center;
+    }
+
+    .service-description {
+        text-align: center;
+    }
+
+    .web-development {
+        background-color: #ff7976;
+        color: #ffffff !important;
+    }
+
+    .shop-fascia {
+        background-color: #27435c;
+        color: #ffffff !important;
+    }
+
+    .print-design {
+        background-color: #252525;
+        color: #ffffff !important;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .services-heading {
+        font-size: 3rem;
+    }
+
+    .first-service {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .service-text-div {
+        padding: 1rem;
+    }
+}
