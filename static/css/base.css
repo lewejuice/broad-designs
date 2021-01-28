@@ -1,0 +1,270 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.topper {
+    padding-top: 10rem;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* --------------Colour-scheme----------------*/
+
+.blue {
+    color: #27435c;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.red {
+    color: #ff7976;
+}
+
+.grey {
+    color: #252525;
+}
+
+.blue-back {
+    background-color: #27435c;
+}
+
+.white-back {
+    background-color: #ffffff;
+}
+
+.red-back {
+    background-color: #ff7976;
+}
+
+.grey-back {
+    background-color: #252525;
+}
+
+/* --------------Nav-bar----------------*/
+
+.logo {
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.list-inline {
+    padding-left: 5rem;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.contact-nav {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .navbar-toggler {
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .nav-link {
+        padding: .5rem 0 .5rem;
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+        margin-right: 0;
+    }
+
+    .logo {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+/* --------------Index----------------*/
+
+.home-option {
+    text-decoration: none;
+    z-index: 1000;
+    color: #ffffff;
+    font-size: 5rem;
+}
+
+.option-div {
+    height: 100%;
+    width: 50%;
+    margin-top: 7.2rem;
+}
+
+.design-div {
+    background: url('/media/design.jpg') no-repeat center center fixed;
+}
+
+.code-div {
+    background: url('/media/coding-img.png') no-repeat center center fixed;
+}
+
+.h1-options {
+    margin-top: 30vh;
+}
+
+@media only screen and (max-width: 1024px) {
+    .h1-options {
+        margin-top: 10vh;
+    }
+
+    .option-div {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .code-div {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .home-option {
+        font-size: 4rem;
+    }
+
+    .design-div {
+        margin-top: 6.3rem;
+    }
+}
+
+/* --------------Recent-works----------------*/
+
+.works-title {
+    padding: 10rem 0 2rem;
+}
+
+.recent-works-container {
+    width: 60vw;
+    margin-left: 20%;
+}
+
+.recent-works-img {
+    width: auto;
+    height: 50vh;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .carousel-item {
+        height: 40vh;
+    }
+
+    .recent-works-img {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    .works-title {
+        padding: 1rem 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .works-title {
+        padding: 6rem 0 2rem;
+    }
+}
+
+/* --------------Contact-footer-form----------------*/
+
+.contact-footer-div {
+    margin-top: 5rem;
+    background-color: #27435c;
+}
+
+.contact-footer-form {
+    padding: 2rem;
+    color: #ffffff;
+}
+
+.contact-message {
+    height: 8rem;
+}
+
+/* --------------Contact-details-footer----------------*/
+
+.contact-details-footer-container {
+    background-color: #252525;
+}
+
+.contact-details-footer {
+    padding: 4rem 0 2rem;
+    color: #ffffff;
+}
+
+/* --------------Main-footer----------------*/
+
+.main-footer {
+    background-color: #252525;
+    border-top: #555 solid thin;
+}
+
+.footer-container {
+    padding: 2rem 2rem 1rem;
+}
+
+.socials-footer {
+    text-align: right;
+}
+
+.social-icons {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .social-icons {
+        font-size: 2.5rem;
+        padding-left: 2rem;
+    }
+
+    .socials-footer {
+        padding: 0 0 1rem;
+        text-align: center;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .social-icons {
+        font-size: 2rem;
+        padding-left: 1.2rem;
+    }
+}
+
