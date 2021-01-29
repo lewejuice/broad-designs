@@ -4,18 +4,23 @@ from .models import Portfolio
 # Create your views here.
 
 
-def design(request):
-    """ A view to navigate to the design page """
+def all_design(request):
+    """ A view to navigate to the design page and display portfolio of design work"""
     projects = Portfolio.objects.all()
 
     context = {
-        'Portfolio': projects,
+        'projects': projects,
     }
 
     return render(request, 'portfolio/design.html', context)
 
 
-def code(request):
+def all_code(request):
     """ A view to navigate to the code page """
+    projects = Portfolio.objects.all()
 
-    return render(request, 'portfolio/code.html')
+    context = {
+        'projects': projects,
+    }
+
+    return render(request, 'portfolio/code.html', context)

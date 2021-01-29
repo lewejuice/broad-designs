@@ -385,3 +385,28 @@ body {
         padding: 1rem;
     }
 }
+
+/* --------------Portfolio----------------*/
+
+.add-project-btn {
+    margin: 3rem;
+}
+
+.portfolio-container {
+    width: 100%;
+}
+
+.project-card {
+    background-color: #252525;
+}
+
+.project-img-container {
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+}
+
+.project-name {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
