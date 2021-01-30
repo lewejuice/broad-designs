@@ -16,7 +16,7 @@ class Portfolio(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     project_date = models.DateField(null=True, blank=True)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 

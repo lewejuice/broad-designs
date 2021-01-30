@@ -38,6 +38,10 @@ body {
     color: #252525;
 }
 
+.light-grey {
+    color: #b6b6b6;
+}
+
 .blue-back {
     background-color: #27435c;
 }
@@ -52,6 +56,10 @@ body {
 
 .grey-back {
     background-color: #252525;
+}
+
+.light-grey-back {
+    background-color: #b6b6b6;
 }
 
 /* --------------Nav-bar----------------*/
@@ -396,17 +404,14 @@ body {
     width: 100%;
 }
 
-.project-card {
-    background-color: #252525;
-}
-
 .project-img-container {
     width: 20rem;
-    height: 20rem;
+    height: auto;
     padding: 1rem;
+    overflow:hidden;
+    align-self: center;
 }
 
 .project-name {
-    color: #ffffff;
     font-size: 1.5rem;
 }
