@@ -419,5 +419,30 @@ body {
 /* --------------Quotation----------------*/
 
 .get-quote-btn-container {
-    padding-top: 15rem;
+    padding-top: 17rem;
+}
+
+.get-quote-btn {
+    width: 20rem;
+    font-size: 2rem;
+}
+
+.quote-switch-container {
+    padding-top: 5rem;
+}
+
+.quote-switch-label {
+    font-size: 1.5rem;
+}
+
+.design-quote-container {
+    padding: 2rem 3rem 0;
+}
+
+.project-description {
+    height: 10rem !important;
+}
+
+.useful-links {
+    height: 6rem !important;
 }

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'services',
     'portfolio',
+    'quotation',
 ]
 
 MIDDLEWARE = [
