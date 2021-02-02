@@ -12,9 +12,11 @@
 {% endblock %}
 
 {% block content %}
+    {% if request.user.is_superuser %}
     <div class="center">
         <button type="button" class="btn btn-primary add-project-btn">Add Project +</button>
     </div>
+    {% endif %}
     <div class="row">
             <div class="portfolio-container">
                 <div class="row mt-1 mb-2"></div>

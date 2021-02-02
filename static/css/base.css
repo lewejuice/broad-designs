@@ -415,3 +415,9 @@ body {
 .project-name {
     font-size: 1.5rem;
 }
+
+/* --------------Quotation----------------*/
+
+.get-quote-btn-container {
+    padding-top: 15rem;
+}
