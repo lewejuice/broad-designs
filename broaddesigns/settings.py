@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'home',
     'services',
     'portfolio',
-    'quotation',
+    'order',
     'management',
 ]
 
@@ -76,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'order.contexts.order_contents',
             ],
         },
     },

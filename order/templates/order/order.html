@@ -11,6 +11,7 @@
     </div>
 {% endblock %}
 {% block content %}
+    <div>{% include 'order/includes/design-order.html' %}</div>
     <div class="btn-group w-100 quote-switch-container" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
         <label class="btn btn-outline-primary quote-switch-label" for="btnradio1">Design Quote</label>
@@ -24,13 +25,14 @@
                 <label for="name-company" class="form-label">Name or Company name</label>
                 <input type="email" class="form-control" id="name-company">
             </div>
-            <div class="col-md-6">
-                <label for="t-audience" class="form-label">Target Audience</label>
-                <select  id="t-audience" class="form-select w-100" multiple aria-label="Default select example">
-                    <option selected>All</option>
-                    <option>Adults</option>
-                    <option>Teens</option>
-                    <option>Children</option>
+            <div class="dropdown col-md-6">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown link
+                </a>
+                <select class="dropdown-menu" multiple="multiple" data-bs-toggle="collapse" aria-labelledby="dropdownMenuLink">
+                    <option class="dropdown-item">Adults</option>
+                    <option class="dropdown-item">Teens</option>
+                    <option class="dropdown-item">Children</option>
                 </select>
             </div>
             <div class="col-12">

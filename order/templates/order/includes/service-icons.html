@@ -1,0 +1,11 @@
+<form class="form" action="{% url 'add_to_order' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="col-12">
+            {% for service in services %}
+            <button>{{ service.name }}</button>
+            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+        </div>
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+    </div>
+</form>
