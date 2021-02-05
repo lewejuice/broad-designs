@@ -17,6 +17,10 @@ class Category(models.Model):
 
 
 class Services(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Services'
+
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     service_id = models.CharField(max_length=254)
     name = models.CharField(max_length=254)
