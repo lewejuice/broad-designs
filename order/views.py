@@ -7,11 +7,17 @@ from services.models import Services
 def order(request):
     """ A view to navigate to the what we do page """
 
-    return render(request, 'order/order.html')
+    services = Services.objects.all()
+
+    context = {
+        'services': services,
+    }
+
+    return render(request, 'order/order.html', context)
 
 
 def add_to_order(request, service_id):
-    """ Add service to users order """
+    """ Add or remove services on users order """
 
     redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order', {})
