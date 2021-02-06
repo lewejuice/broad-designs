@@ -1,10 +1,7 @@
-<form class="form" action="#" method="POST">
-    {% csrf_token %}
-    <div class="form-row">
-        {% for service in services %}
-            <input type="checkbox" class="btn-check" id="{{ service.service_id }}" autocomplete="off">
-            <label class="btn btn-outline-primary" for="{{ service.service_id }}">{{ service.name }}</label>
-        {% endfor %}
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-    </div>
-</form>
+<div class="row">
+    {% for service in services %}
+        <div class="form-row">
+            <a class="btn btn-outline-primary" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
+        </div>
+    {% endfor %}
+</div>    

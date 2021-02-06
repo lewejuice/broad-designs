@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from services.models import Services
+from django.urls import reverse
 
 # Create your views here.
 
@@ -19,14 +20,14 @@ def order(request):
 def add_to_order(request, service_id):
     """ Add or remove services on users order """
 
-    redirect_url = request.POST.get('redirect_url')
     order = request.session.get('order', {})
 
     if service_id in list(order.keys()):
-        remove_from_order()
+        # remove_from_order()
+        print("remove from order")
     else:
-        order[service_id]
+        order[service_id] = 1
 
     request.session['order'] = order
-    print(request.session['order'])
-    return redirect(redirect_url)
+
+    return redirect(reverse("order"))

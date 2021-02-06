@@ -1,11 +1,18 @@
-<div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="center">Your Order</h2>
-            </div>
-        </div>
-        <div>
-            {% include 'order/includes/service-icons.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="center">Your Order</h2>
         </div>
     </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                {% if order_items %}
+                <div class="table-responsive rounded">{{ order_items }}</div>
+                {% else %}
+                <p class="lead mb-5">Your order is empty.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
