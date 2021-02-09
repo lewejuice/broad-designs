@@ -446,3 +446,9 @@ body {
 .useful-links {
     height: 6rem !important;
 }
+
+.checked-service {
+    color: #ffffff;
+    background-color: #0d6efd;
+    border-color: #ffffff;
+}
