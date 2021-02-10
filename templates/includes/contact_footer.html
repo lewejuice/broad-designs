@@ -14,7 +14,7 @@
         </div>
         <div class="col-12">
             <label for="inputMessage" class="form-label c-footer-input">Enter your message...</label>
-            <textarea type="text" class="form-control contact-message" id="inputMessage" required></textarea>
+            <textarea type="text" class="form-control contact-message validate" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" id="inputMessage" required></textarea>
         </div>
         <div class="col-12 center">
             <button type="submit" class="btn btn-primary">Send Message</button>

@@ -166,6 +166,23 @@ body {
     }
 }
 
+/* --------------Bootstrap-Toasts----------------*/
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.toast {
+    opacity: 100% !important;
+}
+
+.toast-logo {
+    height: 2rem;
+}
+
 /* --------------Recent-works----------------*/
 
 .works-title {
@@ -416,7 +433,7 @@ body {
     font-size: 1.5rem;
 }
 
-/* --------------Quotation----------------*/
+/* --------------Order----------------*/
 
 .get-quote-btn-container {
     padding-top: 17rem;
@@ -451,4 +468,23 @@ body {
     color: #ffffff;
     background-color: #0d6efd;
     border-color: #ffffff;
+}
+
+.order-container {
+    background-color: #b6b6b6;
+    color: #ffffff;
+    padding: 3rem;
+}
+
+.your-order {
+    padding-bottom: 2rem;
+}
+
+.continue-payment-container {
+    text-align: right;
+}
+
+.continue-payment-btn {
+    font-size: 1.5rem;
+    margin-top: 3rem;
 }

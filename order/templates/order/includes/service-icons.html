@@ -1,7 +1,10 @@
+<div class="row center">
+    <h4>Choose which services your project needs:</h4>
+</div>
 <div class="row">
     {% for service in services %}
         <div class="col-3">
-            <a class="{% if item.service.name in order_items %}btn btn-outline-primary w-100{% else %}btn btn-outline-primary checked-service w-100{% endif %}" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
+            <a class="{% if service.id in order_items %}btn btn-outline-primary w-100{% else %}btn btn-outline-primary checked-service w-100{% endif %}" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
         </div>
     {% endfor %}
 </div>    

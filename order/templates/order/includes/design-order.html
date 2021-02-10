@@ -1,7 +1,7 @@
-<div class="container">
+<div class="order-container">
     <div class="row">
         <div class="col">
-            <h2 class="center">Your Order</h2>
+            <h2 class="center your-order">Your Order:</h2>
         </div>
     </div>
     <div>
@@ -14,6 +14,10 @@
                 {% else %}
                 <p class="lead mb-5">Your order is empty.</p>
                 {% endif %}
+            </div>
+            <hr>
+            <div class="w-100">
+                <h2>Project Total: £{{ total }}</h2>
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ def order_contents(request):
         service = get_object_or_404(Services, pk=service_id[0])
         total += service.price
         order_items.append({
-            'service_id': service_id,
+            'service_id': service_id[0],
             'service': service,
         })
 
