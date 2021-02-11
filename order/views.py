@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404
 
 from services.models import Services
+from .forms import OrderForm
+from .models import Order
 
 # Create your views here.
 
@@ -15,6 +17,19 @@ def order(request):
     context = {
         'services': services,
     }
+
+    if request.method == 'POST':
+        form_data = {
+            'name_company': request.POST['name_company'],
+            'project_description': request.POST['project_description'],
+            'target_audience': request.POST['target_audience'],
+            'useful_links': request.POST['useful_links'],
+            'img_file': request.POST['image_url'],
+        }
+
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order_form.save(commit=False)
 
     return render(request, 'order/order.html', context)
 

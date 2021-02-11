@@ -19,7 +19,7 @@
         <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code Quote</label>
     </div>
     <div class="design-quote-container">
-        <form class="row g-3">
+        <form action="{% url 'order' %}" class="row g-3">
             <div class="col-md-6">
                 <label for="name-company" class="form-label">Name or Company name</label>
                 <input type="text" class="form-control validate" id="name-company" pattern="[A-Za-z ]{1,32}" required>

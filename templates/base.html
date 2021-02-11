@@ -126,7 +126,6 @@
             return new bootstrap.Toast(toastEl)
         });
         function hideToast() {
-            let toast = document.getElementsByClassName('.toast');
             $( '.toast' ).each(function () {
                 this.style.setProperty( 'opacity', '0', 'important' );
             });

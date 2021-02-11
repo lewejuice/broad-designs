@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'portfolio',
     'order',
     'management',
+    'payment',
 ]
 
 MIDDLEWARE = [
