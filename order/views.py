@@ -29,7 +29,7 @@ def order(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order_form.save(commit=False)
+            order_form.save(commit=True)
 
     return render(request, 'order/order.html', context)
 

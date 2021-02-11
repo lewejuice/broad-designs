@@ -6,7 +6,7 @@ class Order(models.Model):
     project_description = models.CharField(max_length=99999, null=True, blank=True)
     target_audience = models.CharField(max_length=10, null=True, blank=True)
     useful_links = models.CharField(max_length=99999, null=True, blank=True)
-    img_file = models.URLField(max_length=1024, null=True, blank=True)
+    img_file = models.ImageField(upload_to='images/', null=True, blank=False)
 
     def __str__(self):
         return self.order_form
