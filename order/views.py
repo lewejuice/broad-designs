@@ -10,7 +10,7 @@ from .models import Order
 
 
 def order(request):
-    """ A view to navigate to the what we do page """
+    """ A view to navigate to the what we do page and manage order form """
 
     services = Services.objects.all()
 
@@ -19,17 +19,11 @@ def order(request):
     }
 
     if request.method == 'POST':
-        form_data = {
-            'name_company': request.POST['name_company'],
-            'project_description': request.POST['project_description'],
-            'target_audience': request.POST['target_audience'],
-            'useful_links': request.POST['useful_links'],
-            'img_file': request.POST['image_url'],
-        }
-
-        order_form = OrderForm(form_data)
+        order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
-            order_form.save(commit=True)
+            order_form.save()
+        else:
+            messages.error(request, 'Form was invalid')
 
     return render(request, 'order/order.html', context)
 
