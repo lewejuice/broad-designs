@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-from django.shortcuts import get_object_or_404
 
 from services.models import Services
-from .forms import OrderForm
+# from .forms import OrderForm
 from .models import Order
 
 # Create your views here.
@@ -17,13 +16,6 @@ def order(request):
     context = {
         'services': services,
     }
-
-    if request.method == 'POST':
-        order_form = OrderForm(request.POST, request.FILES)
-        if order_form.is_valid():
-            order_form.save()
-        else:
-            messages.error(request, 'Form was invalid')
 
     return render(request, 'order/order.html', context)
 
@@ -59,3 +51,20 @@ def remove_from_order(request, service_id, order):
 
     except Exception as e:
         return HttpResponse(status=500)
+
+
+def project_form(request):
+    """ A form to get the project details from the user """
+    order_form = {}
+    if request.method == 'POST':
+        order_form = Order(request.POST, request.FILES)
+        if order_form.is_valid():
+            order_form.save()
+        else:
+            messages.error(request, 'Form was invalid')
+
+    context = {
+        'order_form': order_form,
+    }
+
+    return render(request, 'order/order.html', context)

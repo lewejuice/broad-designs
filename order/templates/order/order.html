@@ -5,7 +5,7 @@
     <div class="container header-container topper blue">
         <div class="row">
             <div class="col">
-                <h1 class="heading services-heading center">Quotation</h1>
+                <h1 class="heading services-heading center">Proposal</h1>
             </div>
         </div>
     </div>
@@ -13,20 +13,21 @@
 {% block content %}
     <div class="btn-group w-100 quote-switch-container" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn btn-outline-primary quote-switch-label" for="btnradio1">Design Quote</label>
+        <label class="btn btn-outline-primary quote-switch-label" for="btnradio1">Design Proposal</label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-        <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code Quote</label>
+        <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code Proposal</label>
     </div>
     <div class="design-quote-container">
-        <form action="{% url 'order' %}" class="row g-3">
+        <form action="{% url 'project_form' %}" class="row g-3">
+            {% csrf_token %}
             <div class="col-md-6">
-                <label for="name-company" class="form-label">Name or Company name</label>
-                <input type="text" class="form-control validate" id="name-company" pattern="[A-Za-z ]{1,32}" required>
+                <label for="project_name" class="form-label">Project Name</label>
+                <input type="text" class="form-control validate" name="project_name" id="project_name" pattern="[A-Za-z ]{1,32}" required>
             </div>
             <div class="col-md-6">
-                <label for="targetAudience" class="form-label">Target Audience</label>
-                <select id="targetAudience" class="form-select">
+                <label for="target_audience" class="form-label">Target Audience</label>
+                <select id="target_audience" name="target_audience" class="form-select">
                     <option selected>All</option>
                     <option>Adults</option>
                     <option>Teens</option>
@@ -34,18 +35,27 @@
                 </select>
             </div>
             <div class="col-12">
-                <label for="project-description" class="form-label">Project Description</label>
-                <textarea class="form-control project-description validate" aria-label="project-description" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" required></textarea>
+                <label for="project_description" class="form-label">Project Description</label>
+                <textarea class="form-control project-description validate" name="project_description" id="project_description" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" required></textarea>
             </div>
             <div class="col-12">
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupFile01">Please upload useful files for your project</label>
-                    <input type="file" class="form-control" id="inputGroupFile01">
+                    <label class="input-group-text" for="img_file">Please upload a useful file for your project</label>
+                    <input type="file" class="form-control" name="img_file" id="img_file">
                 </div>
             </div>
             <div class="col-12">
-                <label for="useful-links" class="form-label">Company website or other links</label>
-                <textarea class="form-control useful-links" aria-label="useful-links"></textarea>
+                <label for="useful_links" class="form-label">Company website or other links</label>
+                <textarea class="form-control useful-links" name="useful_links" id="useful_links"></textarea>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="username" id="username" value="{{ username }}" required>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="price" id="price" value="{{ total }}" required>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="category" id="category" value="design_order" required>
             </div>
             <div class="col-md-12">{% include 'order/includes/service-icons.html' %}</div>
             <div class="col-md-12">{% include 'order/includes/design-order.html' %}</div>
