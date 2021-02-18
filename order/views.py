@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.utils import timezone
 
 from services.models import Services
-# from .forms import OrderForm
+from .forms import OrderForm
 from .models import Order
 
 # Create your views here.
@@ -55,11 +56,12 @@ def remove_from_order(request, service_id, order):
 
 def project_form(request):
     """ A form to get the project details from the user """
-    order_form = {}
+    order_form = OrderForm()
     if request.method == 'POST':
-        order_form = Order(request.POST, request.FILES)
+        order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
             order_form.save()
+            messages.success(request, f'Your project has been created')
         else:
             messages.error(request, 'Form was invalid')
 

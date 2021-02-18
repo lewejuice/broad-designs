@@ -19,7 +19,7 @@
         <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code Proposal</label>
     </div>
     <div class="design-quote-container">
-        <form action="{% url 'project_form' %}" class="row g-3">
+        <form method="POST" action="{% url 'project_form' %}" enctype="multipart/form-data" class="row g-3">
             {% csrf_token %}
             <div class="col-md-6">
                 <label for="project_name" class="form-label">Project Name</label>
@@ -49,18 +49,27 @@
                 <textarea class="form-control useful-links" name="useful_links" id="useful_links"></textarea>
             </div>
             <div>
-                <input type="hidden" class="form-control" name="username" id="username" value="{{ username }}" required>
+                <input type="hidden" class="form-control" name="username" id="username" value="{{ user.get_username }}" required>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="order_paid" id="order_paid" value="false" required>
             </div>
             <div>
                 <input type="hidden" class="form-control" name="price" id="price" value="{{ total }}" required>
             </div>
             <div>
-                <input type="hidden" class="form-control" name="category" id="category" value="design_order" required>
+                <input type="hidden" class="form-control" name="category" id="category" value="1" required>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="order_date" id="order_date" value="{{ current_date }}" required>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" name="project_services" id="project_services" value="{% if order_items %}{% for item in order_items %}{{ item.service.name }}, {% endfor %}{% endif %}" required>
             </div>
             <div class="col-md-12">{% include 'order/includes/service-icons.html' %}</div>
             <div class="col-md-12">{% include 'order/includes/design-order.html' %}</div>
             <div class="col-12 continue-payment-container">
-                <button type="submit" class="btn btn-primary continue-payment-btn">Continue to Payment <i class="fas fa-arrow-right"></i></button>
+                <button class="btn btn-primary project-form-submit-btn" type="submit" value="payment" name="to_payment">Continue to Payment <i class="fas fa-arrow-right"></i></button>
             </div>
         </form>
     </div>

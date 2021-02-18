@@ -4,17 +4,20 @@ from .models import Order, Category
 
 class OrdersAdmin(admin.ModelAdmin):
     list_display = (
-        'username',
         'project_name',
+        'target_audience',
+        'project_description',
+        'img_file',
+        'useful_links',
+        'username',
+        'order_paid',
+        'price',
         'category',
         'order_date',
-        'order_paid',
-        'project_description',
-        'target_audience',
-        'useful_links',
-        'img_file',
-        'price',
+        'project_services',
     )
+
+    readonly_fields = ['order_date', 'order_paid', 'price']
 
     ordering = ('order_date',)
 

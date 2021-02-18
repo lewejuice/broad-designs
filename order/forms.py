@@ -1,9 +1,10 @@
-# from django import forms
-# from .models import Order
+from django import forms
+from .models import Order
 
 
-# class OrderForm(forms.ModelForm):
-    # class Meta:
-        # model = Order
-        # fields = ('username', 'project_name', 'category', 'order_date', 'order_paid', 'target_audience', 'project_description',
-                  # 'img_file', 'useful_links', 'price')
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('project_name', 'target_audience', 'project_description',
+                  'img_file', 'useful_links', 'username', 'order_paid',
+                  'price', 'category', 'order_date', 'project_services')
