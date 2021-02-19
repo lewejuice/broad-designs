@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class QuotationConfig(AppConfig):
-    name = 'quotation'
+class OrderConfig(AppConfig):
+    name = 'order'

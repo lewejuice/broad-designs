@@ -2,75 +2,88 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container topper blue">
-        <div class="row">
-            <div class="col">
-                <h1 class="heading services-heading center">Proposal</h1>
-            </div>
+<div class="container header-container topper blue">
+    <div class="row">
+        <div class="col">
+            <h1 class="heading services-heading center">Proposal</h1>
         </div>
     </div>
+</div>
 {% endblock %}
 {% block content %}
-    <div class="btn-group w-100 quote-switch-container" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn btn-outline-primary quote-switch-label" for="btnradio1">Design Proposal</label>
+<div id="design-form-conatiner" class="design-quote-container">
+    <form method="POST" action="{% url 'project_form' %}" enctype="multipart/form-data" class="row g-3">
+        {% csrf_token %}
+        <div class="row center">
+            <h4>Please select the services you require:</h4>
+        </div>
+        <div class="btn-group w-100 quote-switch-container" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary quote-switch-label" for="btnradio1">Design</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-        <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code Proposal</label>
-    </div>
-    <div class="design-quote-container">
-        <form method="POST" action="{% url 'project_form' %}" enctype="multipart/form-data" class="row g-3">
-            {% csrf_token %}
-            <div class="col-md-6">
-                <label for="project_name" class="form-label">Project Name</label>
-                <input type="text" class="form-control validate" name="project_name" id="project_name" pattern="[A-Za-z ]{1,32}" required>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary quote-switch-label" for="btnradio3">Code</label>
+        </div>
+        <div id="design-service-icons" class="col-md-12">{% include 'order/includes/design-service-icons.html' %}</div>
+        <div id="code-service-icons" class="col-md-12">{% include 'order/includes/code-service-icons.html' %}</div>
+        <div class="col-md-12">{% include 'order/includes/order-list.html' %}</div>
+        <div>
+            <input type="hidden" class="form-control" name="order_number" id="order_number" value="{{ order_number }}"
+                required>
+        </div>
+        <div class="col-md-6">
+            <label for="project_name" class="form-label">Project Name</label>
+            <input type="text" class="form-control validate" name="project_name" id="project_name"
+                pattern="[A-Za-z ]{1,32}" required>
+        </div>
+        <div class="col-md-6">
+            <label for="target_audience" class="form-label">Target Audience</label>
+            <select id="target_audience" name="target_audience" class="form-select">
+                <option selected>All</option>
+                <option>Adults</option>
+                <option>Teens</option>
+                <option>Children</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="project_description" class="form-label">Project Description</label>
+            <textarea class="form-control project-description validate" name="project_description"
+                id="project_description" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" required></textarea>
+        </div>
+        <div class="col-12">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="img_file">Please upload a useful file for your project</label>
+                <input type="file" class="form-control" name="img_file" id="img_file">
             </div>
-            <div class="col-md-6">
-                <label for="target_audience" class="form-label">Target Audience</label>
-                <select id="target_audience" name="target_audience" class="form-select">
-                    <option selected>All</option>
-                    <option>Adults</option>
-                    <option>Teens</option>
-                    <option>Children</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <label for="project_description" class="form-label">Project Description</label>
-                <textarea class="form-control project-description validate" name="project_description" id="project_description" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" required></textarea>
-            </div>
-            <div class="col-12">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" for="img_file">Please upload a useful file for your project</label>
-                    <input type="file" class="form-control" name="img_file" id="img_file">
-                </div>
-            </div>
-            <div class="col-12">
-                <label for="useful_links" class="form-label">Company website or other links</label>
-                <textarea class="form-control useful-links" name="useful_links" id="useful_links"></textarea>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="username" id="username" value="{{ user.get_username }}" required>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="order_paid" id="order_paid" value="false" required>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="price" id="price" value="{{ total }}" required>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="category" id="category" value="1" required>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="order_date" id="order_date" value="{{ current_date }}" required>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" name="project_services" id="project_services" value="{% if order_items %}{% for item in order_items %}{{ item.service.name }}, {% endfor %}{% endif %}" required>
-            </div>
-            <div class="col-md-12">{% include 'order/includes/service-icons.html' %}</div>
-            <div class="col-md-12">{% include 'order/includes/design-order.html' %}</div>
-            <div class="col-12 continue-payment-container">
-                <button class="btn btn-primary project-form-submit-btn" type="submit" value="payment" name="to_payment">Continue to Payment <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="col-12">
+            <label for="useful_links" class="form-label">Company website or other links</label>
+            <textarea class="form-control useful-links" name="useful_links" id="useful_links"></textarea>
+        </div>
+        <div>
+            <input type="hidden" class="form-control" name="username" id="username" value="{{ user.get_username }}"
+                required>
+        </div>
+        <div>
+            <input type="hidden" class="form-control" name="order_paid" id="order_paid" value="false" required>
+        </div>
+        <div>
+            <input type="hidden" class="form-control" name="price" id="price" value="{{ total }}" required>
+        </div>
+        <div>
+            <input type="hidden" class="form-control" name="order_date" id="order_date" value="{{ current_date }}"
+                required>
+        </div>
+        <div>
+            <input type="hidden" class="form-control" name="project_services" id="project_services"
+                value="{% if order_items %}{% for item in order_items %}{{ item.service.name }}, {% endfor %}{% endif %}"
+                required>
+        </div>
+        <div class="col-12 continue-payment-container">
+            <button class="btn btn-primary project-form-submit-btn" type="submit" value="payment"
+                name="to_payment">Continue to Payment <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>
 {% endblock %}

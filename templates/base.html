@@ -130,6 +130,14 @@
                 this.style.setProperty( 'opacity', '0', 'important' );
             });
         }
+        $('#btnradio1').click(function() {
+            $('#design-service-icons').css("display", "block");
+            $('#code-service-icons').css("display", "none");
+        });
+        $('#btnradio3').click(function() {
+            $('#design-service-icons').css("display", "none");
+            $('#code-service-icons').css("display", "block");
+        });
     </script>
     {% endblock %}
 

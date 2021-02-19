@@ -1,8 +1,5 @@
-<div class="row center">
-    <h4>Choose which services your project needs:</h4>
-</div>
 <div class="row">
-    {% for service in services %}
+    {% for service in code_services %}
         <div class="col-3">
             <a class="btn btn-outline-primary checked-service w-100" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
         </div>

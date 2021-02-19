@@ -13,9 +13,13 @@ def order(request):
     """ A view to navigate to the what we do page and manage order form """
 
     services = Services.objects.all()
+    design_services = Services.objects.filter(category='1')
+    code_services = Services.objects.filter(category='2')
 
     context = {
         'services': services,
+        'design_services': design_services,
+        'code_services': code_services,
     }
 
     return render(request, 'order/order.html', context)
@@ -57,6 +61,7 @@ def remove_from_order(request, service_id, order):
 def project_form(request):
     """ A form to get the project details from the user """
     order_form = OrderForm()
+    print(order_form)
     if request.method == 'POST':
         order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
@@ -64,9 +69,10 @@ def project_form(request):
             messages.success(request, f'Your project has been created')
         else:
             messages.error(request, 'Form was invalid')
+            print(order_form)
 
     context = {
         'order_form': order_form,
     }
 
-    return render(request, 'order/order.html', context)
+    return render(request, 'payment/payment.html', context)

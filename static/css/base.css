@@ -445,7 +445,7 @@ body {
 }
 
 .quote-switch-container {
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 
 .quote-switch-label {
@@ -486,5 +486,8 @@ body {
 
 .project-form-submit-btn {
     font-size: 1.5rem;
-    margin-top: 3rem;
+}
+
+#code-service-icons {
+    display: none;
 }
