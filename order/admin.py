@@ -3,23 +3,21 @@ from .models import Order
 
 
 class OrdersAdmin(admin.ModelAdmin):
-    list_display = (
-        'order_number',
-        'project_name',
-        'target_audience',
-        'project_description',
-        'img_file',
-        'useful_links',
-        'username',
-        'order_paid',
-        'price',
-        'order_date',
-        'project_services',
-    )
 
-    readonly_fields = ['order_number', 'order_date', 'order_paid', 'price']
+    readonly_fields = ('order_number', 'date', 'order_total',)
 
-    ordering = ('order_date',)
+    fields = ('project_name', 'target_audience', 'project_description',
+              'img_file', 'useful_links', 'username',
+              'order_number', 'date', 'full_name',
+              'email', 'phone_number', 'country',
+              'postcode', 'town_or_city', 'street_address1',
+              'street_address2', 'county', 'order_total',
+              'project_services')
+
+    list_display = ('order_number', 'date', 'full_name',
+                    'order_total', 'delivery_cost',)
+
+    ordering = ('-date',)
 
 
 # Register your models here.
