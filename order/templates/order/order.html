@@ -23,7 +23,7 @@
     </div>
     <hr>
     <div class="w-100">
-        <h2>Project Total: £{{ total }}</h2>
+        <h2>Project Total: £{{ order_total }}</h2>
     </div>
 </div>
 <div id="design-form-conatiner" class="design-quote-container">
@@ -35,6 +35,7 @@
             {{ order_form.project_name | as_crispy_field }}
             {{ order_form.target_audience | as_crispy_field }}
             {{ order_form.project_description | as_crispy_field }}
+            <legend class="fieldset-label small text-black px-2 w-auto">Upload a useful file:</legend>
             {{ order_form.img_file | as_crispy_field }}
             {{ order_form.useful_links | as_crispy_field }}
         </fieldset>
@@ -87,4 +88,11 @@
 		</div>
     </form>Ï
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'order/js/stripe_elements.js' %}"></script>
 {% endblock %}
