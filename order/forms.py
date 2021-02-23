@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm, Textarea
 from .models import Order
 
 
@@ -10,8 +11,10 @@ class OrderForm(forms.ModelForm):
                   'useful_links', 'full_name',
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', 'county',
-        )
+                  'street_address2', 'county')
+        widgets = {
+            'project_description': Textarea(attrs={'cols': 80, 'rows': 10}),
+        }
 
     def __init__(self, *args, **kwargs):
         """
