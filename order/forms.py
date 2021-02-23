@@ -38,7 +38,7 @@ class OrderForm(forms.ModelForm):
         }
 
         self.fields['project_name'].widget.attrs['autofocus'] = True
-        self.img_file = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+        self.fields['img_file'].required = False
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
