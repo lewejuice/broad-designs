@@ -1,6 +1,5 @@
 from django import forms
 from .models import Order
-from .widgets import CustomClearableFileInput
 
 
 class OrderForm(forms.ModelForm):
