@@ -1,5 +1,6 @@
 from django import forms
 from .models import Order
+from .widgets import CustomClearableFileInput
 
 
 class OrderForm(forms.ModelForm):
@@ -37,6 +38,7 @@ class OrderForm(forms.ModelForm):
         }
 
         self.fields['project_name'].widget.attrs['autofocus'] = True
+        self.img_file = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'

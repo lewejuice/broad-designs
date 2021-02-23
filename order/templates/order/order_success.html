@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container topper blue">
+    <div class="row">
+        <div class="col">
+            <h1 class="heading services-heading center">Thank you</h1>
+            <hr>
+            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-7"></div>
+</div>
+<div class="row">
+    <a href="{% url 'services' %}" class="btn rounded-0 my-2">
+		<span class="icon mr-2">
+			<i class="fas fa-eye"></i>
+		</span>
+		<span class="text-uppercase">Now see what else we can offer you!</span>
+	</a>
+</div>
+{% endblock %}

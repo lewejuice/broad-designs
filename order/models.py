@@ -12,7 +12,7 @@ class Order(models.Model):
     project_name = models.CharField(max_length=50, null=False, blank=False)
     target_audience = models.CharField(max_length=10, null=True, blank=True)
     project_description = models.CharField(max_length=99999, null=True, blank=True)
-    img_file = models.ImageField(upload_to='media/', null=True, blank=False)
+    img_file = models.ImageField(null=True, blank=False)
     useful_links = models.CharField(max_length=99999, null=True, blank=True)
     username = models.CharField(max_length=50, null=False, blank=False)
     project_services = models.CharField(max_length=10000, null=True, blank=True)
@@ -27,7 +27,6 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
