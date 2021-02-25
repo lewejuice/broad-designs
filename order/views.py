@@ -9,6 +9,7 @@ from services.models import Services
 from bagged_services.contexts import order_contents
 
 import stripe
+import json
 
 
 @require_POST
@@ -17,7 +18,9 @@ def cache_order_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
+            'service_order': get_order_services(request),
             'save_info': request.POST.get('save_info'),
+            'username': request.user,
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -26,20 +29,33 @@ def cache_order_data(request):
         return HttpResponse(content=e, status=400)
 
 
+def get_order_services(request):
+    current_bagged_services = order_contents(request)
+    order = current_bagged_services['order_items']
+    order_list = []
+    if order:
+        for item in order[0:2:1]:
+            order_list.append(item['service'].name)
+    service_order = ', '.join(order_list)
+
+    return service_order
+
+
+def get_order_total(request):
+    order = order_contents(request)
+    total = order['order_total']
+
+    return total
+
+
 def order(request):
     """
     Form to process the order
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    current_bagged_services = order_contents(request)
-    order = current_bagged_services['order_items']
-    total = current_bagged_services['order_total']
-    order_list = []
-    if order:
-        for item in order[0:2:1]:
-            order_list.append(item['service'].name)
-    service_order = ', '.join(order_list)
+    total = get_order_total(request)
+    service_order = get_order_services(request)
 
     if request.method == 'POST':
         order = request.session.get('order', {})
@@ -61,7 +77,7 @@ def order(request):
             messages.error(request, "There's nothing in your order at the moment")
             return redirect(reverse('bagged_services'))
 
-    total = current_bagged_services['order_total']
+    total = get_order_total(request)
     stripe_total = round(total * 100)
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
