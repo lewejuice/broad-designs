@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'order',
     'management',
     'bagged_services',
+    'profiles',
 
     # other
     'crispy_forms',

@@ -27,4 +27,5 @@ urlpatterns = [
     path('bagged_services/', include('bagged_services.urls')),
     path('order/', include('order.urls')),
     path('management/', include('management.urls')),
+    path('profiles/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
