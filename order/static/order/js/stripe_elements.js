@@ -59,7 +59,6 @@ form.addEventListener('submit', function(ev) {
     var projectName = $('input[name="project_name"]').val();
     var targetAudience = $('input[name="target_audience"]').val();
     var projectDescription = $('textarea[name="project_description"]').val();
-    // var imgFile = $('input[name="img_file"]').val();
     var usefulLinks = $('input[name="useful_links"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
@@ -68,7 +67,6 @@ form.addEventListener('submit', function(ev) {
         'project_name': projectName,
         'target_audience': targetAudience,
         'project_description': projectDescription,
-        // 'img_file': imgFile,
         'useful_links': usefulLinks
     };
     var url = '/order/cache_order_data/';

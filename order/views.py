@@ -26,7 +26,6 @@ def cache_order_data(request):
             'project_name': request.POST.get('project_name'),
             'target_audience': request.POST.get('target_audience'),
             'project_description': request.POST.get('project_description'),
-            # 'img_file': request.POST.get('img_file'),
             'useful_links': useful_links,
             'username': request.user,
         })
@@ -35,12 +34,6 @@ def cache_order_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-
-
-# def get_img_file(request):
-    # img_file = request.POST.get('img_file')
-
-    # return img_file
 
 
 def get_order_services(request):

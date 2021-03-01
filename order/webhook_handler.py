@@ -4,7 +4,6 @@ from django.http import HttpResponse
 # from django.conf import settings
 
 from .models import Order
-# from .views import get_img_file
 from bagged_services.contexts import order_contents
 
 import time
@@ -36,7 +35,6 @@ class StripeWH_Handler:
         project_name = intent.metadata.project_name
         target_audience = intent.metadata.target_audience
         project_description = intent.metadata.project_description
-        # img_file = get_img_file
         useful_links = intent.metadata.useful_links
 
         billing_details = intent.charges.data[0].billing_details
@@ -79,7 +77,6 @@ class StripeWH_Handler:
                     project_name=project_name,
                     target_audience=target_audience,
                     project_description=project_description,
-                    # img_file=img_file,
                     useful_links=useful_links,
                     username=username,
                     full_name=billing_details.name,

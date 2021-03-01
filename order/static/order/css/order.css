@@ -43,3 +43,15 @@
     margin: 0;
     height: 100%;
 }
+
+/* Change colour of filled in form input */
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #6e767e !important;
+}
