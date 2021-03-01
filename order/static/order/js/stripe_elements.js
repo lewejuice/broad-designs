@@ -56,10 +56,20 @@ form.addEventListener('submit', function(ev) {
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var projectName = $('input[name="project_name"]').val();
+    var targetAudience = $('input[name="target_audience"]').val();
+    var projectDescription = $('textarea[name="project_description"]').val();
+    // var imgFile = $('input[name="img_file"]').val();
+    var usefulLinks = $('input[name="useful_links"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
+        'project_name': projectName,
+        'target_audience': targetAudience,
+        'project_description': projectDescription,
+        // 'img_file': imgFile,
+        'useful_links': usefulLinks
     };
     var url = '/order/cache_order_data/';
 
@@ -79,7 +89,7 @@ form.addEventListener('submit', function(ev) {
                         state: $.trim(form.county.value),
                     }
                 }
-            }    
+            } 
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');

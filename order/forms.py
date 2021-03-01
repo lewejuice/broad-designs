@@ -40,6 +40,8 @@ class OrderForm(forms.ModelForm):
         }
 
         self.fields['project_name'].widget.attrs['autofocus'] = True
+        self.fields['project_description'].required = True
+        self.fields['target_audience'].required = True
         self.fields['img_file'].required = False
         for field in self.fields:
             if self.fields[field].required:

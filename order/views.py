@@ -9,17 +9,25 @@ from services.models import Services
 from bagged_services.contexts import order_contents
 
 import stripe
-import json
 
 
 @require_POST
 def cache_order_data(request):
+    if request.POST.get('useful_links') == '':
+        useful_links = 'None'
+    else:
+        useful_links = request.POST.get('useful_links')
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'service_order': get_order_services(request),
             'save_info': request.POST.get('save_info'),
+            'project_name': request.POST.get('project_name'),
+            'target_audience': request.POST.get('target_audience'),
+            'project_description': request.POST.get('project_description'),
+            # 'img_file': request.POST.get('img_file'),
+            'useful_links': useful_links,
             'username': request.user,
         })
         return HttpResponse(status=200)
@@ -29,7 +37,16 @@ def cache_order_data(request):
         return HttpResponse(content=e, status=400)
 
 
+# def get_img_file(request):
+    # img_file = request.POST.get('img_file')
+
+    # return img_file
+
+
 def get_order_services(request):
+    """
+    Get the names of services in the order
+    """
     current_bagged_services = order_contents(request)
     order = current_bagged_services['order_items']
     order_list = []
@@ -42,6 +59,9 @@ def get_order_services(request):
 
 
 def get_order_total(request):
+    """
+    Get the order total
+    """
     order = order_contents(request)
     total = order['order_total']
 
@@ -61,7 +81,9 @@ def order(request):
         order = request.session.get('order', {})
         order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
             order.username = request.user.username
             order.project_services = service_order
             order.order_total = total
@@ -77,7 +99,6 @@ def order(request):
             messages.error(request, "There's nothing in your order at the moment")
             return redirect(reverse('bagged_services'))
 
-    total = get_order_total(request)
     stripe_total = round(total * 100)
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
@@ -111,8 +132,8 @@ def order_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
-    if 'order_items' in request.session:
-        del request.session['order_items']
+    if 'order_contents' in request.session:
+        del request.session['order_contents']
 
     template = 'order/order_success.html'
     context = {
