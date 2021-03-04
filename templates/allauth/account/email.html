@@ -4,8 +4,14 @@
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
-{% block content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+{% block inner_content %}
+<div class="container header-container topper blue">
+    <div class="row">
+        <div class="col">
+            <h1 class="heading services-heading center">{% trans "E-mail Addresses" %}</h1>
+        </div>
+    </div>
+</div>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
@@ -26,7 +32,7 @@
     <span class="unverified">{% trans "Unverified" %}</span>
     {% endif %}
       {% if emailaddress.primary %}<span class="primary">{% trans "Primary" %}</span>{% endif %}
-</label>
+    </label>
 </div>
   {% endfor %}
 
@@ -49,7 +55,7 @@
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
