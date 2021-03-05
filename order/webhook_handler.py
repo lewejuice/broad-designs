@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from .models import Order
 from bagged_services.contexts import order_contents
+from profiles.models import UserProfile
 
 import time
 
@@ -41,19 +42,19 @@ class StripeWH_Handler:
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Update profile information if save_info was checked
-        # profile = None
-        # username = intent.metadata.username
-        # if username != 'AnonymousUser':
-            # profile = UserProfile.objects.get(user__username=username)
-            # if save_info:
-                # profile.default_phone_number = billing_details.phone
-                # profile.default_country = billing_details.address.country
-                # profile.default_postcode = billing_details.address.postal_code
-                # profile.default_town_or_city = billing_details.address.city
-                # profile.default_street_address1 = billing_details.address.line1
-                # profile.default_street_address2 = billing_details.address.line2
-                # profile.default_county = billing_details.address.state
-                # profile.save()
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = billing_details.phone
+                profile.default_country = billing_details.address.country
+                profile.default_postcode = billing_details.address.postal_code
+                profile.default_town_or_city = billing_details.address.city
+                profile.default_street_address1 = billing_details.address.line1
+                profile.default_street_address2 = billing_details.address.line2
+                profile.default_county = billing_details.address.state
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -79,6 +80,7 @@ class StripeWH_Handler:
                     project_description=project_description,
                     useful_links=useful_links,
                     username=username,
+                    user_profile=profile,
                     full_name=billing_details.name,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
