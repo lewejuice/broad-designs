@@ -7,15 +7,18 @@
         <div class="col">
             <h1 class="heading services-heading center">Thank you</h1>
             <hr>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.
-            </p>
+            {% if from_profile %}
+            <p class="center">Your order information is below.</p>
+            {% else %}
+            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            {% endif %}
         </div>
     </div>
 </div>
 {% endblock %}
 {% block content %}
 <div class="row">
-    <div class="col-12 col-lg-7">
+    <div class="col-12">
         <div class="p-2 border">
             <div class="row">
                 <div class="col">
@@ -158,11 +161,20 @@
     </div>
 </div>
 <div class="row">
-    <a href="{% url 'services' %}" class="btn rounded-0 my-2">
+{% if from_profile %}
+    <a href="{% url 'profile' %}" class="btn btn-outline-dark">
+        <span class="icon mr-2">
+            <i class="fas fa-angle-left"></i>
+        </span>
+        <span class="text-uppercase">Back to Profile</span>
+    </a>
+{% else %}
+    <a href="{% url 'services' %}" class="btn btn-outline-dark">
         <span class="icon mr-2">
             <i class="fas fa-eye"></i>
         </span>
         <span class="text-uppercase">Now see what else we can offer you!</span>
     </a>
+{% endif %}
 </div>
 {% endblock %}
