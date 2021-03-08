@@ -24,3 +24,4 @@ def all_code(request):
     }
 
     return render(request, 'portfolio/code.html', context)
+
