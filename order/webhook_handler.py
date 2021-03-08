@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-# from django.core.mail import send_mail
-# from django.template.loader import render_to_string
-# from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Order
 from bagged_services.contexts import order_contents
@@ -15,6 +15,23 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        cust_email = order["email"]
+        subject = render_to_string(
+            'order/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'order/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
 
     def handle_event(self, event):
         """
@@ -37,6 +54,10 @@ class StripeWH_Handler:
         target_audience = intent.metadata.target_audience
         project_description = intent.metadata.project_description
         useful_links = intent.metadata.useful_links
+
+        order_data = Order.objects.get(stripe_pid=pid)
+        date = order_data.date
+        order_number = order_data.order_number
 
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
@@ -67,6 +88,16 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            order = {
+                'full_name': billing_details.name,
+                'email': billing_details.email,
+                'phone_number': billing_details.phone,
+                'order_total': order_total,
+                'project_services': service_order,
+                'date': date,
+                'order_number': order_number
+            }
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
                          'Verified order already in database'),
@@ -100,7 +131,16 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-
+        order = {
+            'full_name': billing_details.name,
+            'email': billing_details.email,
+            'phone_number': billing_details.phone,
+            'order_total': order_total,
+            'project_services': service_order,
+            'date': date,
+            'order_number': order_number,
+        }
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)

@@ -67,7 +67,7 @@ form.addEventListener('submit', function(ev) {
         'project_name': projectName,
         'target_audience': targetAudience,
         'project_description': projectDescription,
-        'useful_links': usefulLinks
+        'useful_links': usefulLinks,
     };
     var url = '/order/cache_order_data/';
 
