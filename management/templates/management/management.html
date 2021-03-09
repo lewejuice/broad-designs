@@ -11,7 +11,78 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div>
-        <a class="btn btn-primary" href="{% url 'add_service' %}">Add service +</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h3 class="">Services</h3>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-success" href="{% url 'add_service' %}">Add service <i class="fas fa-plus-circle"></i></a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Edit service <i class="fas fa-edit"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    {% if services %}
+                        <li><h6 class="dropdown-header">Design Services</h6></li>
+                        {% for service in design_services %}
+                            <li><a class="dropdown-item" href="{% url 'edit_service' service.service_id %}">{{ service.name }}</a></li>
+                        {% endfor %}
+                        <li><h6 class="dropdown-header">Code Services</h6></li>
+                        {% for service in code_services %}
+                            <li><a class="dropdown-item" href="{% url 'edit_service' service.service_id %}">{{ service.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}    
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Delete service <i class="fas fa-trash-alt"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    {% if services %}
+                        <li><h6 class="dropdown-header">Design Services</h6></li>
+                        {% for service in design_services %}
+                            <li><a class="dropdown-item" href="{% url 'delete_service' service.service_id %}">{{ service.name }}</a></li>
+                        {% endfor %}
+                        <li><h6 class="dropdown-header">Code Services</h6></li>
+                        {% for service in code_services %}
+                            <li><a class="dropdown-item" href="{% url 'delete_service' service.service_id %}">{{ service.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h3 class="">Portfolio</h3>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-success" href="#">Add project <i class="fas fa-plus-circle"></i></a>
+            <a class="btn btn-primary" href="#">Edit project <i class="fas fa-edit"></i></a>
+            <a class="btn btn-danger" href="#">Delete project <i class="fas fa-trash-alt"></i></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h3 class="">Orders</h3>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-success" href="">Add service <i class="fas fa-plus-circle"></i></a>
+            <a class="btn btn-primary" href="#">Edit service <i class="fas fa-edit"></i></a>
+            <a class="btn btn-danger" href="#">Delete service <i class="fas fa-trash-alt"></i></a>
+        </div>
     </div>
 {% endblock %}
