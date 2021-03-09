@@ -4,7 +4,6 @@ from .models import Services, Category
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = (
-        'service_id',
         'name',
         'category',
         'price',

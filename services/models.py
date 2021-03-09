@@ -22,7 +22,6 @@ class Services(models.Model):
         verbose_name_plural = 'Services'
 
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    service_id = models.CharField(max_length=254)
     name = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 

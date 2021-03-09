@@ -29,11 +29,11 @@
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
                         {% for service in design_services %}
-                            <li><a class="dropdown-item" href="{% url 'edit_service' service.service_id %}">{{ service.name }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'edit_service' service.id %}">{{ service.name }}</a></li>
                         {% endfor %}
                         <li><h6 class="dropdown-header">Code Services</h6></li>
                         {% for service in code_services %}
-                            <li><a class="dropdown-item" href="{% url 'edit_service' service.service_id %}">{{ service.name }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'edit_service' service.id %}">{{ service.name }}</a></li>
                         {% endfor %}
                     {% endif %}    
                 </ul>
@@ -46,11 +46,11 @@
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
                         {% for service in design_services %}
-                            <li><a class="dropdown-item" href="{% url 'delete_service' service.service_id %}">{{ service.name }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'delete_service_page' service.id %}">{{ service.name }}</a></li>
                         {% endfor %}
                         <li><h6 class="dropdown-header">Code Services</h6></li>
                         {% for service in code_services %}
-                            <li><a class="dropdown-item" href="{% url 'delete_service' service.service_id %}">{{ service.name }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'delete_service_page' service.id %}">{{ service.name }}</a></li>
                         {% endfor %}
                     {% endif %}    
                 </ul>

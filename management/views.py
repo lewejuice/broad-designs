@@ -50,7 +50,7 @@ def edit_service(request, service_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated service!')
-            return redirect(reverse('edit_service'))
+            return redirect('management')
         else:
             messages.error(request, 'Failed to update service. Please ensure the form is valid.')
     else:
@@ -66,10 +66,22 @@ def edit_service(request, service_id):
     return render(request, template, context)
 
 
+def delete_service_page(request, service_id):
+    """ A view to navigate to the delete service page """
+    service = get_object_or_404(Services, pk=service_id)
+    template = 'management/delete_service.html'
+
+    context = {
+        'service': service,
+    }
+
+    return render(request, template, context)
+
+
 def delete_service(request, service_id):
-    """ Delete a product from the store """
+    """ Delete a service """
     service = get_object_or_404(Services, pk=service_id)
     service.delete()
     messages.success(request, 'Service deleted!')
 
-    return render(request, 'management/management.html')
+    return redirect('management')
