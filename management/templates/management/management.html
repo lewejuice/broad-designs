@@ -66,9 +66,41 @@
             </div>
         </div>
         <div>
-            <a class="btn btn-success" href="#">Add project <i class="fas fa-plus-circle"></i></a>
-            <a class="btn btn-primary" href="#">Edit project <i class="fas fa-edit"></i></a>
-            <a class="btn btn-danger" href="#">Delete project <i class="fas fa-trash-alt"></i></a>
+            <a class="btn btn-success" href="{% url 'add_project' %}">Add project <i class="fas fa-plus-circle"></i></a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="edit-project" data-bs-toggle="dropdown" aria-expanded="false">
+                    Edit project <i class="fas fa-edit"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="edit-project">
+                    {% if portfolio %}
+                        <li><h6 class="dropdown-header">Design Projects</h6></li>
+                        {% for project in design_portfolio %}
+                            <li><a class="dropdown-item" href="{% url 'edit_project' project.id %}">{{ project.name }}</a></li>
+                        {% endfor %}
+                        <li><h6 class="dropdown-header">Code Projects</h6></li>
+                        {% for project in code_portfolio %}
+                            <li><a class="dropdown-item" href="{% url 'edit_project' project.id %}">{{ project.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}    
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="delete-project" data-bs-toggle="dropdown" aria-expanded="false">
+                    Delete project <i class="fas fa-trash-alt"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="delete-project">
+                    {% if portfolio %}
+                        <li><h6 class="dropdown-header">Design Projects</h6></li>
+                        {% for project in design_portfolio %}
+                            <li><a class="dropdown-item" href="{% url 'delete_project_page' project.id %}">{{ project.name }}</a></li>
+                        {% endfor %}
+                        <li><h6 class="dropdown-header">Code Projects</h6></li>
+                        {% for project in code_portfolio %}
+                            <li><a class="dropdown-item" href="{% url 'delete_project_page' project.id %}">{{ project.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}    
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container">

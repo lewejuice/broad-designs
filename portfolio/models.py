@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Category(models.Model):
+class Portfolio_category(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -13,7 +13,7 @@ class Category(models.Model):
 
 
 class Portfolio(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Portfolio_category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     project_date = models.DateField(null=True, blank=True)
     description = models.TextField(blank=True)
