@@ -522,3 +522,9 @@ body {
 #code-service-icons {
     display: none;
 }
+
+/*------------Management-order-details---------*/
+
+.order-useful-img {
+    height: 25rem;
+}

@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container topper blue">
+        <div class="row">
+            <div class="col">
+                <h1 class="heading services-heading center">Management</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="p-2 border">
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Order Info:</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Order Number</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.order_number }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Order Date</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.date }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Order Details:</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Project Name</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.project_name }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Services</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.project_services }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Project Description</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.project_description }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Target Audience</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.target_audience }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Useful File</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <img class="order-useful-img" src="{{ order.img_file.url }}" alt="{{ order.project_name }}">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Useful Links</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.useful_links }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Clients Details:</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Full Name</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.full_name }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Phone Number</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.phone_number }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Email</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.email }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Address 1</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.street_address1 }}</p>
+                </div>
+            </div>
+
+            {% if order.street_address2 %}
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Address 2</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.street_address1 }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if order.county %}
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">County</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.county }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Town or City</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.town_or_city }}</p>
+                </div>
+            </div>
+
+            {% if order.postcode %}
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Postal Code</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.postcode }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Country</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">{{ order.country }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <small class="text-muted">Billing Info:</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <p class="mb-0 text-black font-weight-bold">Order Total</p>
+                </div>
+                <div class="col-12 col-md-8 text-md-right">
+                    <p class="mb-0">£{{ order.order_total }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+<a href="{% url 'management' %}" class="btn btn-outline-dark">
+        <span class="icon mr-2">
+            <i class="fas fa-angle-left"></i>
+        </span>
+        <span class="text-uppercase">Back to Management</span>
+    </a>
+</div>
+{% endblock %}

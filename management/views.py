@@ -5,7 +5,8 @@ from .forms import ServiceForm
 from .forms import PortfolioForm
 from services.models import Services
 from portfolio.models import Portfolio
-# Create your views here.
+from order.models import Order
+from profiles.models import UserProfile
 
 
 def management(request):
@@ -17,6 +18,8 @@ def management(request):
     portfolio = Services.objects.all()
     design_portfolio = Portfolio.objects.filter(category='2')
     code_portfolio = Portfolio.objects.filter(category='1')
+    orders = Order.objects.all()
+    profiles = UserProfile.objects.all()
 
     context = {
         'services': services,
@@ -25,6 +28,8 @@ def management(request):
         'portfolio': portfolio,
         'design_portfolio': design_portfolio,
         'code_portfolio': code_portfolio,
+        'orders': orders,
+        'profiles': profiles,
     }
 
     return render(request, 'management/management.html', context)
@@ -159,3 +164,15 @@ def delete_project(request, project_id):
     messages.success(request, 'Project deleted!')
 
     return redirect('management')
+
+
+def order_info(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
+
+    template = 'management/order_info.html'
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    return render(request, template, context)
