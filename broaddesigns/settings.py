@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'management',
     'bagged_services',
     'profiles',
+    'contact',
 
     # other
     'crispy_forms',

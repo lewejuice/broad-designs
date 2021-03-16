@@ -8,7 +8,7 @@ from services.models import Services
 from portfolio.models import Portfolio
 from order.models import Order
 from profiles.models import UserProfile
-
+from contact.forms import ContactForm
 
 
 @login_required
@@ -27,6 +27,7 @@ def management(request):
     code_portfolio = Portfolio.objects.filter(category='1')
     orders = Order.objects.all()
     profiles = UserProfile.objects.all()
+    contact_form = ContactForm()
 
     context = {
         'services': services,
@@ -37,6 +38,7 @@ def management(request):
         'code_portfolio': code_portfolio,
         'orders': orders,
         'profiles': profiles,
+        'contact_form': contact_form
     }
 
     return render(request, 'management/management.html', context)

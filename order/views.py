@@ -10,6 +10,7 @@ from services.models import Services
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bagged_services.contexts import order_contents
+from contact.forms import ContactForm
 
 import stripe
 
@@ -127,10 +128,12 @@ def order(request):
             Did you forget to set it in your environment?')
 
     template = 'order/order.html'
+    contact_form = ContactForm()
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'contact_form': contact_form,
     }
 
     return render(request, template, context)

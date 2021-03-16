@@ -1,0 +1,23 @@
+<div class="contact-footer-div">
+    <form action="{% url 'contact' %}" method="POST" id="contact-form" class="row g-3 contact-footer-form">
+        {% csrf_token %}
+        <div class="col-md-6">
+            {{ contact_form.first_name | as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+            {{ contact_form.last_name | as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+            {{ contact_form.email_address | as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+            {{ contact_form.phone_number | as_crispy_field }}
+        </div>
+        <div class="col-12">
+            {{ contact_form.message | as_crispy_field }}
+        </div>
+        <div class="col-12 center">
+            <button type="submit" class="btn btn-outline-light">Send Message</button>
+        </div>
+    </form>
+</div>

@@ -1,26 +1,4 @@
-<div class="contact-footer-div">
-    <form class="row g-3 contact-footer-form">
-        <div class="col-md-4">
-            <label for="name" class="form-label c-footer-input">Name</label>
-            <input type="text" class="form-control validate" pattern="[A-Za-z ]{1,32}" id="name" required>
-        </div>
-        <div class="col-md-4">
-            <label for="inputEmail4" class="form-label c-footer-input">Email</label>
-            <input type="email" class="form-control validate" pattern="[0-9a-zA-Z_.-@]*" id="inputEmail4" required>
-        </div>
-        <div class="col-md-4">
-            <label for="phone" class="form-label c-footer-input">Phone (optional)</label>
-            <input type="phone" class="form-control" id="phone">
-        </div>
-        <div class="col-12">
-            <label for="inputMessage" class="form-label c-footer-input">Enter your message...</label>
-            <textarea type="text" class="form-control contact-message validate" pattern="[[0-9a-zA-Z_.()-@]* ]{1,10000}" id="inputMessage" required></textarea>
-        </div>
-        <div class="col-12 center">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </div>
-    </form>
-</div>
+{% include 'contact/includes/contact-form.html' %}
 <div class="contact-details-footer-container">
     <div class="container">
         <div class="row contact-details-footer">

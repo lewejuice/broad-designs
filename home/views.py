@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from contact.forms import ContactForm
 
 # Create your views here.
 
@@ -6,4 +7,9 @@ from django.shortcuts import render
 def index(request):
     """ A view to return the index page """
 
-    return render(request, 'home/index.html')
+    contact_form = ContactForm()
+    context = {
+        'contact_form': contact_form
+    }
+
+    return render(request, 'home/index.html', context)

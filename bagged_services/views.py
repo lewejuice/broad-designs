@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from services.models import Services
+from contact.forms import ContactForm
 
 # Create your views here.
 
@@ -14,11 +15,13 @@ def bagged_services(request):
     services = Services.objects.all()
     design_services = Services.objects.filter(category='1')
     code_services = Services.objects.filter(category='2')
+    contact_form = ContactForm()
 
     context = {
         'services': services,
         'design_services': design_services,
         'code_services': code_services,
+        'contact_form': contact_form,
     }
 
     return render(request, 'bagged_services/bagged_services.html', context)
