@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -177,8 +178,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Stripe
-STRIPE_CURRENCY = 'usd'
+STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET_BD', '')
+MAPS_API_KEY = os.getenv('MAPS_API_KEY', '')
 DEFAULT_FROM_EMAIL = 'broadesigns@outlook.com'

@@ -50,7 +50,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a href="{% url 'home' %}" class="nav-link">
-                        <img class="logo" src="{{ MEDIA_URL }}bdesignlogo.jpg" alt="Broad Designs">
+                        <img class="logo" src="{{ MEDIA_URL }}bdesignlogo.png" alt="Broad Designs">
                 </a>
                 <a class="navbar-brand" href="{% url 'home' %}">Broad Designs</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,6 +122,23 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/605214e7067c2605c0b972b8/1f10a3afb';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAPbUpJUfp9s-9drk52ZqvN_vh_Z8Hy0&map_ids=f1e2fa33d3b68b37&callback=initMap&libraries=&v=weekly"
+        async
+    ></script>
     <script type="text/javascript">
         var toastElList = [].slice.call(document.querySelectorAll('.toast'));
         var toastList = toastElList.map(function (toastEl) {
@@ -143,7 +160,9 @@
     </script>
     {% endblock %}
 
-    {% include 'includes/recent_works.html' %}
+    {% if request.get_full_path != "/contact/" %}
+        {% include 'includes/recent_works.html' %}
+    {% endif %}    
     {% include 'includes/contact_footer.html' %}
     {% include 'includes/main_footer.html' %}
 

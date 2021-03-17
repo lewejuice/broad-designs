@@ -47,9 +47,11 @@ def order_history(request, order_number):
     ))
 
     template = 'order/order_success.html'
+    contact_form = ContactForm()
     context = {
         'order': order,
         'from_profile': True,
+        'contact_form': contact_form,
     }
 
     return render(request, template, context)

@@ -12,11 +12,6 @@
 {% endblock %}
 
 {% block content %}
-    {% if request.user.is_superuser %}
-    <div class="center">
-        <button type="button" class="btn btn-primary add-project-btn">Add Project +</button>
-    </div>
-    {% endif %}
     <div class="row">
         <div class="portfolio-container">
             <div class="row mt-1 mb-2"></div>
@@ -26,24 +21,20 @@
                         {% if project.category.name == "design_portfolio" %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card project-card light-grey-back border-0">
-                                <div class="project-img-container">
-                                    {% if project.image %}
-                                    <a href="#">
+                                    <div class="project-img-container">
+                                        {% if project.image %}
                                         <img class="card-img-top img-fluid" src="{{ project.image.url }}" alt="{{ project.name }}">
-                                    </a>
-                                    {% else %}
-                                    <a href="">
+                                        {% else %}
                                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                    </a>
-                                    {% endif %}
-                                </div>
+                                        {% endif %}
+                                    </div>
                                 <div class="card-body pb-0">
                                     <p class="mb-0 project-name grey center">{{ project.name }}</p>
                                 </div>
                                 <div class="card-footer light-grey-back grey pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold center">${{ project.description }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold center">{{ project.description }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +70,7 @@
             </div>
         </div>  
         <div class="center col-12 mx-auto get-quote-btn-container">
-            <a href="{% url 'order' %}"><button class="btn btn-primary get-quote-btn" type="button">GET A QUOTE!</button></a>
+            <a href="{% url 'bagged_services' %}"><button class="btn btn-primary get-quote-btn" type="button">CREATE ORDER</button></a>
         </div>
-
+    </div>    
 {% endblock %}

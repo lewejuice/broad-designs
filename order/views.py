@@ -174,8 +174,10 @@ def order_success(request, order_number):
         del request.session['order_contents']
 
     template = 'order/order_success.html'
+    contact_form = ContactForm()
     context = {
         'order': order,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)

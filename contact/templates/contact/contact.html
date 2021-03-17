@@ -11,5 +11,16 @@
 </div>
 {% endblock %}
 {% block content %}
-{% include 'contact/includes/contact-form.html' %}
+<div id="map"></div>
+<div class="contact-page-div blue-back">
+    <h2 class="red">Contact Broad Designs</h2>
+    <p class="white">We are developers and designers based in Broadstairs, Kent, working for clients nationally, and internationally. Drop us a line and let us show what we can do for your business.</p>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ maps_api_key|json_script:"id_maps_api_key" }}
+    {{ media_url|json_script:"id_media_url" }}
+    <script src="{% static 'contact/js/google_maps.js' %}"></script>
 {% endblock %}

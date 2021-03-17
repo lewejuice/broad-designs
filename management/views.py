@@ -50,7 +50,7 @@ def add_service(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     if request.method == 'POST':
         form = ServiceForm(request.POST)
         if form.is_valid():
@@ -62,8 +62,10 @@ def add_service(request):
     else:
         form = ServiceForm()
     template = 'management/add_service.html'
+    contact_form = ContactForm()
     context = {
         'form': form,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
@@ -90,9 +92,11 @@ def edit_service(request, service_id):
         messages.info(request, f'You are editing {service.name}')
 
     template = 'management/edit_service.html'
+    contact_form = ContactForm()
     context = {
         'form': form,
         'service': service,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
@@ -107,9 +111,12 @@ def delete_service_page(request, service_id):
 
     service = get_object_or_404(Services, pk=service_id)
     template = 'management/delete_service.html'
+    contact_form = ContactForm()
 
     context = {
         'service': service,
+        'contact_form': contact_form
+        
     }
 
     return render(request, template, context)
@@ -148,8 +155,10 @@ def add_project(request):
         form = PortfolioForm()
 
     template = 'management/add_project.html'
+    contact_form = ContactForm()
     context = {
         'form': form,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
@@ -176,9 +185,11 @@ def edit_project(request, project_id):
         messages.info(request, f'You are editing {project.name}')
 
     template = 'management/edit_project.html'
+    contact_form = ContactForm()
     context = {
         'form': form,
         'project': project,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
@@ -193,9 +204,11 @@ def delete_project_page(request, project_id):
 
     project = get_object_or_404(Portfolio, pk=project_id)
     template = 'management/delete_project.html'
+    contact_form = ContactForm()
 
     context = {
         'project': project,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
@@ -222,11 +235,13 @@ def order_info(request, order_number):
         return redirect(reverse('home'))
 
     order = get_object_or_404(Order, order_number=order_number)
+    contact_form = ContactForm()
 
     template = 'management/order_info.html'
     context = {
         'order': order,
         'from_profile': True,
+        'contact_form': contact_form
     }
 
     return render(request, template, context)
