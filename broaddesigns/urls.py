@@ -29,5 +29,4 @@ urlpatterns = [
     path('management/', include('management.urls')),
     path('profiles/', include('profiles.urls')),
     path('contact/', include('contact.urls')),
-    path('google-site-verification: google3e1e27baf2f49bd0.html/', include('home.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
