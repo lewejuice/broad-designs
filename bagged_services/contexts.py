@@ -21,13 +21,9 @@ def order_contents(request):
             'service': service,
         })
 
-    order_tile = order_items[0:2:1]
-    order_object = order_tile[0]
-
     context = {
         'order_items': order_items,
         'order_total': order_total,
-        'order_object': order_object,
         'contact_form': contact_form,
     }
 
