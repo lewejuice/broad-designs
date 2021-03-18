@@ -1,7 +1,7 @@
 <div class="row">
     {% for service in design_services %}
         <div class="col-3">
-            <a class="btn btn-outline-primary checked-service w-100" id="{{ service.id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
+            <a class="{% if service.id in order_objects %}btn btn-primary w-100{% else %}btn btn-outline-primary w-100{% endif %}" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
         </div>
     {% endfor %}
 </div>    
