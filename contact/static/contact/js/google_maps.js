@@ -7,7 +7,7 @@ function initMap() {
     mapId: 'f1e2fa33d3b68b37'
   });
   const image =
-    "/media/bdesignlogo.png/";
+    "media/bdesignlogo.png";
   var icon = {
     url: image, 
     scaledSize: new google.maps.Size(40, 40),
