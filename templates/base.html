@@ -150,8 +150,10 @@
 
     {% if request.get_full_path != "/contact/" %}
         {% include 'includes/recent_works.html' %}
-    {% endif %}    
-    {% include 'includes/contact_footer.html' %}
+    {% endif %}  
+    {% if request.get_full_path != "/accounts" %}  
+        {% include 'includes/contact_footer.html' %}
+    {% endif %} 
     {% include 'includes/main_footer.html' %}
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

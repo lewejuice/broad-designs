@@ -34,9 +34,4 @@ def contact(request):
             messages.success(request, 'Your message has been sent, \
                 we will get back to you as soon as possible!')
             return redirect("home")
-
-    contact_form = ContactForm()
-    context = {
-        'contact_form': contact_form
-    }
-    return render(request, "contact/contact.html", context)
+    return render(request, "contact/contact.html")
