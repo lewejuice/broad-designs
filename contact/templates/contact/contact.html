@@ -23,4 +23,8 @@
     {{ maps_api_key|json_script:"id_maps_api_key" }}
     {{ media_url|json_script:"id_media_url" }}
     <script src="{% static 'contact/js/google_maps.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAPbUpJUfp9s-9drk52ZqvN_vh_Z8Hy0&map_ids=f1e2fa33d3b68b37&callback=initMap&libraries=&v=weekly"
+        async
+    ></script>
 {% endblock %}

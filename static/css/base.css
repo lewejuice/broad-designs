@@ -141,6 +141,10 @@ body {
     margin-top: 30vh;
 }
 
+.intro-container {
+    margin: 8rem 0 0;
+}
+
 @media only screen and (max-width: 1024px) {
     .h1-options {
         margin-top: 10vh;
@@ -217,7 +221,7 @@ body {
 /* --------------Recent-works----------------*/
 
 .works-title {
-    padding: 10rem 0 2rem;
+    padding: 5rem 0 2rem;
 }
 
 .recent-works-container {
@@ -244,7 +248,7 @@ body {
     }
 
     .works-title {
-        padding: 1rem 0 2rem;
+        padding: 3rem 0 2rem;
     }
 }
 
@@ -340,6 +344,7 @@ body {
 
 .services-heading {
     font-size: 4rem;
+    margin-bottom: 3rem;
 }
 
 .services-sub-heading {
@@ -433,10 +438,7 @@ body {
     .first-service {
         padding-top: 0;
     }
-}
 
-@media only screen and (max-width: 414px) {
-    
     .service-text-div {
         padding: 1rem;
     }
@@ -467,20 +469,31 @@ body {
 /* --------------Order----------------*/
 
 .get-quote-btn-container {
-    padding-top: 17rem;
+    margin-top: 5rem;
+    padding: 4rem 2rem;
 }
 
 .get-quote-btn {
     width: 20rem;
     font-size: 2rem;
+    margin-top: 1rem;
 }
 
 .quote-switch-container {
-    padding-top: 1rem;
+    padding: 1rem 0;
 }
 
 .quote-switch-label {
     font-size: 1.5rem;
+}
+
+.service-icons-container {
+    margin-bottom: 2rem;
+}
+
+.service-icon-option {
+    margin: .5rem;
+    width: 95%;
 }
 
 .design-quote-container {
@@ -493,12 +506,6 @@ body {
 
 .useful-links {
     height: 6rem !important;
-}
-
-.checked-service {
-    color: #ffffff;
-    background-color: #0d6efd;
-    border-color: #ffffff;
 }
 
 .order-container {
@@ -521,6 +528,15 @@ body {
 
 #code-service-icons {
     display: none;
+}
+
+@media only screen and (max-width: 320px) {
+
+    .get-quote-btn {
+        width: auto;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
 }
 
 /*------------Management-order-details---------*/
@@ -574,4 +590,8 @@ body {
 #map {
   margin-top: 2rem;  
   height: 20rem;
+}
+
+.contact-footer-head {
+    padding-top: 2rem;
 }

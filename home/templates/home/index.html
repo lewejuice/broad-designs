@@ -24,7 +24,43 @@
             </div>
         </div>
     </div>
-    <div class="center col-12 mx-auto get-quote-btn-container">
+    <div class="intro-container">
+        <div class="row g-0 w-100 service red-back">
+            <div class="col-lg-6 col-md-12 service-description service-text-div">
+                <h1 class="display-4 center white services-sub-heading">
+                    Who are we?
+                </h1>
+                <p class="service-strap-line grey">
+                    We are a collective of professional software developers and graphic designers in Kent with passion and expertise to burn.
+                </p>
+                <p class="white service-text"> 
+                    As a software and design agency, we are well versed in creating print designs, websites and everything in between to help move a businesses forward.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img class="service-img" src="{{ MEDIA_URL }}web-designer.jpg">
+            </div>
+        </div>
+        <div class="row g-0 w-100 service blue-back">
+            <div class="col-lg-6">
+                <img class="service-img" src="{{ MEDIA_URL }}codecode.jpg">
+            </div>
+            <div class="col-lg-6 col-md-12 right-align service-text-div">
+                <h1 class="display-4 center white services-sub-heading">
+                    What we do
+                </h1>
+                <p class="service-strap-line red">
+                    We can provide you with everything you would expect from a software/design agency. Without the price tag.
+                </p>
+                <p class="white service-text">
+                    Creating striking offline and online material is our speciality. Whatever your line of work, We have the skills and vision to help your business stand out from the crowd.
+                </p>
+                <a class="btn btn-primary" href="{% url 'services' %}">EXPLORE</a>
+            </div>
+        </div>
+    </div>
+    <div class="center col-12 mx-auto get-quote-btn-container grey-back">
+        <h3 class="white">Bring your ideas to life, and click here to start your project with us.</h3>
         <a href="{% url 'bagged_services' %}"><button class="btn btn-primary get-quote-btn" type="button">CREATE ORDER</button></a>
     </div>
 {% endblock %}
