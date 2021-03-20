@@ -572,10 +572,58 @@ body {
     }
 }
 
+/*------------Management-page---------*/
+
+@media only screen and (max-width: 414px) {
+    
+    .management-btn {
+        margin-bottom: .5rem;
+    }
+}
+
 /*------------Management-order-details---------*/
 
+.order-info-container {
+    margin: 2rem;
+}
+
+.useful-img-container {
+    margin: 3rem;
+}
+
 .order-useful-img {
-    height: 25rem;
+    width: 60%;
+    padding: 1rem;
+}
+
+.useful-file-head {
+    font-size: 2rem;
+}
+
+.order-details-head {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .order-detail-manage {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .order-useful-img {
+        width: 100%;
+    }
+
+    .useful-img-container {
+        margin: 0;
+    }
+
+    .order-info-container {
+        margin: 0.5rem;
+    }
 }
 
 /*------------Management-portfolio-form---------*/
@@ -621,8 +669,8 @@ body {
 }
 
 #map {
-  margin-top: 2rem;  
-  height: 20rem;
+    margin-top: 2rem;  
+    height: 20rem;
 }
 
 .contact-footer-head {
@@ -639,14 +687,5 @@ body {
 
     .order-history-container {
         padding-top: 2rem;
-    }
-}
-
-/*------------Management-page---------*/
-
-@media only screen and (max-width: 414px) {
-    
-    .management-btn {
-        margin-bottom: .5rem;
     }
 }
