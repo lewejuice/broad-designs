@@ -123,6 +123,14 @@ body {
     font-size: 5rem;
 }
 
+.design-code-container {
+    height: 100%;
+}
+
+.design-code-imgs {
+    height: 100%;
+}
+
 .option-div {
     height: 100%;
     width: 50%;
@@ -142,7 +150,25 @@ body {
 }
 
 .intro-container {
-    margin: 8rem 0 0;
+    margin-top: 8rem;
+}
+
+.about-us-heading {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.about-us-sub-heading {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.about-us-strap-line {
+    font-size: 1.8rem;
+}
+
+.about-us-text {
+    font-size: 1.6rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -157,6 +183,26 @@ body {
 
     .code-div {
         margin: 0;
+    }
+
+    .design-code-container {
+        height: auto;
+    }
+
+    .design-code-imgs {
+        height: auto;
+    }
+
+    .intro-container {
+        margin: 0;
+    }
+
+    .about-us-strap-line {
+        font-size: 1.3rem;
+    }
+
+    .about-us-text {
+        font-size: 1.1rem;
     }
 }
 
@@ -370,7 +416,7 @@ body {
 }
 
 .service-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -385,7 +431,7 @@ body {
     }
 
     .service-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 

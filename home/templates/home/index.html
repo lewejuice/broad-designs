@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="h-100">
-        <div class="row h-100">
+    <div class="h-lg-100 design-code-container">
+        <div class="row design-code-imgs">
             <div class="col-md-6 col-xs-12 design-div option-div">
                 <h1 class="display-4 center h1-options">
                     <a class="home-option" href="{% url 'design' %}">Design</a>
@@ -27,13 +27,13 @@
     <div class="intro-container">
         <div class="row g-0 w-100 service red-back">
             <div class="col-lg-6 col-md-12 service-description service-text-div">
-                <h1 class="display-4 center white services-sub-heading">
+                <h1 class="display-4 center white about-us-sub-heading">
                     Who are we?
                 </h1>
-                <p class="service-strap-line grey">
+                <p class="about-us-strap-line grey">
                     We are a collective of professional software developers and graphic designers in Kent with passion and expertise to burn.
                 </p>
-                <p class="white service-text"> 
+                <p class="white about-us-text"> 
                     As a software and design agency, we are well versed in creating print designs, websites and everything in between to help move a businesses forward.
                 </p>
             </div>
@@ -46,13 +46,13 @@
                 <img class="service-img" src="{{ MEDIA_URL }}codecode.jpg">
             </div>
             <div class="col-lg-6 col-md-12 right-align service-text-div">
-                <h1 class="display-4 center white services-sub-heading">
+                <h1 class="display-4 center white about-us-sub-heading">
                     What we do
                 </h1>
-                <p class="service-strap-line red">
+                <p class="about-us-strap-line red">
                     We can provide you with everything you would expect from a software/design agency. Without the price tag.
                 </p>
-                <p class="white service-text">
+                <p class="white about-us-text">
                     Creating striking offline and online material is our speciality. Whatever your line of work, We have the skills and vision to help your business stand out from the crowd.
                 </p>
                 <a class="btn btn-primary" href="{% url 'services' %}">EXPLORE</a>
