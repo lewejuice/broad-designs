@@ -130,11 +130,11 @@ body {
 }
 
 .design-div {
-    background: url('/media/design.jpg') no-repeat center center fixed;
+    background: url('/media/design.jpg') 0 0 / cover;
 }
 
 .code-div {
-    background: url('/media/coding-img.png') no-repeat center center fixed;
+    background: url('/media/coding-img.png') 0 0 / cover;
 }
 
 .h1-options {
