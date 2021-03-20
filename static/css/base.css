@@ -641,3 +641,12 @@ body {
         padding-top: 2rem;
     }
 }
+
+/*------------Management-page---------*/
+
+@media only screen and (max-width: 414px) {
+    
+    .management-btn {
+        margin-bottom: .5rem;
+    }
+}

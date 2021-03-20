@@ -19,13 +19,15 @@
                 <hr>
             </div>
         </div>
-        <div>
-            <a class="btn btn-success" href="{% url 'add_service' %}">Add service <i class="fas fa-plus-circle"></i></a>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="row">
+            <div class="col-md-4 management-btn">
+                <a class="btn btn-success w-100" href="{% url 'add_service' %}">Add service <i class="fas fa-plus-circle"></i></a>
+            </div>
+            <div class="dropdown col-md-4 management-btn">
+                <button class="btn btn-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Edit service <i class="fas fa-edit"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
                         {% for service in design_services %}
@@ -38,11 +40,11 @@
                     {% endif %}    
                 </ul>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown col-md-4 management-btn">
+                <button class="btn btn-danger dropdown-toggle w-100" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     Delete service <i class="fas fa-trash-alt"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton2">
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
                         {% for service in design_services %}
@@ -65,13 +67,15 @@
                 <hr>
             </div>
         </div>
-        <div>
-            <a class="btn btn-success" href="{% url 'add_project' %}">Add project <i class="fas fa-plus-circle"></i></a>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="edit-project" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-success w-100 management-btn" href="{% url 'add_project' %}">Add project <i class="fas fa-plus-circle"></i></a>
+            </div>
+            <div class="dropdown col-md-4 management-btn">
+                <button class="btn btn-primary dropdown-toggle w-100" type="button" id="edit-project" data-bs-toggle="dropdown" aria-expanded="false">
                     Edit project <i class="fas fa-edit"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="edit-project">
+                <ul class="dropdown-menu w-100" aria-labelledby="edit-project">
                     {% if portfolio %}
                         <li><h6 class="dropdown-header">Design Projects</h6></li>
                         {% for project in design_portfolio %}
@@ -84,11 +88,11 @@
                     {% endif %}    
                 </ul>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-danger dropdown-toggle" type="button" id="delete-project" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown col-md-4 management-btn">
+                <button class="btn btn-danger dropdown-toggle w-100" type="button" id="delete-project" data-bs-toggle="dropdown" aria-expanded="false">
                     Delete project <i class="fas fa-trash-alt"></i>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="delete-project">
+                <ul class="dropdown-menu w-100" aria-labelledby="delete-project">
                     {% if portfolio %}
                         <li><h6 class="dropdown-header">Design Projects</h6></li>
                         {% for project in design_portfolio %}
