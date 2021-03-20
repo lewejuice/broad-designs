@@ -218,6 +218,13 @@ body {
     height: 2rem;
 }
 
+@media only screen and (max-width: 414px) {
+
+    .message-container {
+        width: 90%;
+    }
+}
+
 /* --------------Recent-works----------------*/
 
 .works-title {
@@ -500,14 +507,6 @@ body {
     padding: 2rem 3rem 0;
 }
 
-.project-description {
-    height: 10rem !important;
-}
-
-.useful-links {
-    height: 6rem !important;
-}
-
 .order-container {
     background-color: #b6b6b6;
     color: #ffffff;
@@ -518,16 +517,50 @@ body {
     padding-bottom: 2rem;
 }
 
-.continue-payment-container {
-    text-align: right;
+#code-service-icons {
+    display: none;
 }
 
-.project-form-submit-btn {
+.secure-check-btn {
+    margin: 1rem 3rem;
+}
+
+.item-in-order {
     font-size: 1.5rem;
 }
 
-#code-service-icons {
-    display: none;
+@media only screen and (max-width: 1024px) {
+
+    .service-icon-option {
+        height: 5.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .design-quote-container {
+        padding: 2rem 2rem;
+    }
+
+    .service-icon-option {
+        height: auto;
+    }
+
+    .secure-check-container {
+        text-align: center;
+    }
+
+    .secure-check-btn {
+        margin: 1rem 0;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .order-container {
+        padding: 2rem;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -594,4 +627,17 @@ body {
 
 .contact-footer-head {
     padding-top: 2rem;
+}
+
+/*------------Profile-page---------*/
+
+.profile-info {
+    padding: 0 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .order-history-container {
+        padding-top: 2rem;
+    }
 }

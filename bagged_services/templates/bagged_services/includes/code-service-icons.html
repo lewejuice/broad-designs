@@ -1,6 +1,6 @@
 <div class="row service-icons-container">
     {% for service in code_services %}
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
             <a class="{% if service.id in order_objects %}btn btn-primary service-icon-option{% else %}btn btn-outline-primary service-icon-option{% endif %}" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
         </div>
     {% endfor %}

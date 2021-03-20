@@ -24,6 +24,12 @@
     padding: 3rem 0 1rem
 }
 
+/* Order success page */
+
+.order-info-success {
+    padding: 3rem;
+}
+
 /* Payment Spinner */
 
 #loading-overlay {
@@ -54,4 +60,44 @@ select option {
 select:invalid,
 select option[value=""] {
     color: #6e767e !important;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .order-form-container {
+        padding-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .order-form-container {
+        padding-top: 0;
+    }
+
+    .order-items-container {
+        padding: 2rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+
+    .submit-button {
+        text-align: center;
+    }
+
+    .order-info-success {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .design-quote-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .order-info-success {
+        padding: 0.2rem;
+    }
 }

@@ -26,8 +26,8 @@
     <div id="code-service-icons" class="col-md-12">{% include 'bagged_services/includes/code-service-icons.html' %}</div>
     <div class="col-md-12">{% include 'bagged_services/includes/order-list.html' %}</div>
 </div>
-<div>
-    <a href="{% url 'order' %}" class="btn btn-black rounded-0 btn-lg">
+<div class="secure-check-container">
+    <a href="{% url 'order' %}" class="btn btn-outline-dark btn-lg secure-check-btn">
         <span class="text-uppercase">Secure Checkout</span>
         <span class="icon">
             <i class="fas fa-lock"></i>

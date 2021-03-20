@@ -9,7 +9,7 @@
             <div class="col">
                 {% if order_items %}
                     {% for item in order_items %}
-                    <div class="table-responsive rounded">{{ item.service.name }}</div>
+                    <div class="table-responsive rounded item-in-order">{{ item.service.name }}</div>
                     {% endfor %}
                 {% else %}
                 <p class="lead mb-5">Your order is empty.</p>

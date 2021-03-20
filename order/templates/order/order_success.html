@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'order/css/order.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container topper blue">
     <div class="row">
@@ -19,7 +23,7 @@
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <div class="p-2 border">
+        <div class="order-info-success border">
             <div class="row">
                 <div class="col">
                     <small class="text-muted">Order Info:</small>

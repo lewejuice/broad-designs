@@ -16,7 +16,7 @@
 {% endblock %}
 {% block content %}
 <div class="row order-form-container">
-    <div id="design-form-conatiner" class="design-quote-container col-md-9">
+    <div id="design-form-conatiner" class="design-quote-container col-lg-9 col-md-12">
         <p class="text-muted">Please fill out the form below to complete your order:</p>
         <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data" id="payment-form">
             {% csrf_token %}
@@ -94,7 +94,7 @@
             </div>
         </form>
     </div>
-    <div class="col-md-3 order-items-container red-back white">
+    <div class="col-lg-3 col-md-12 order-items-container red-back white">
         <h2 class="your-services-head">Your Services:</h2>
         {% if order_items %}
             {% for item in order_items %}
