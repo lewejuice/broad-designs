@@ -219,7 +219,7 @@ body {
 /* --------------Allauth form styling----------------*/
 
 .allauth-form-inner-content {
-    padding: 0 14rem;
+    padding: 0 25rem;
 }
 
 .allauth-form-inner-content p {
@@ -245,6 +245,42 @@ body {
 
 .login-form {
     padding-top: 2rem;
+}
+
+.home-btn {
+    width: 11rem;
+    margin-top: 1rem;
+}
+
+.allauth-contact-btn {
+    width: 11rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .allauth-form-inner-content {
+        padding: 0 14rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .allauth-form-inner-content {
+        padding: 0 7rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .allauth-form-inner-content {
+        padding: 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .allauth-form-inner-content {
+        padding: 0 1rem;
+    }
 }
 
 /* --------------Bootstrap-Toasts----------------*/
@@ -503,6 +539,14 @@ body {
     margin: 3rem;
 }
 
+.project-card-container {
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    height: 35rem;
+}
+
 .portfolio-container {
     width: 100%;
 }
@@ -517,6 +561,27 @@ body {
 
 .project-name {
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .project-card {
+        height: 40rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .project-card {
+        height: 37rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    
+    .project-card {
+        height: 40rem;
+    }
 }
 
 /* --------------Order----------------*/

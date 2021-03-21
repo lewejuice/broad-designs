@@ -19,7 +19,7 @@
                 {% for project in projects %}
                     {% if project %}
                         {% if project.category.name == "design_portfolio" %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 project-card-container">
                             <div class="card project-card light-grey-back border-0">
                                     <div class="project-img-container">
                                         {% if project.image %}
@@ -28,7 +28,7 @@
                                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                         {% endif %}
                                     </div>
-                                <div class="card-body pb-0">
+                                <div class="pb-0">
                                     <p class="mb-0 project-name grey center">{{ project.name }}</p>
                                 </div>
                                 <div class="card-footer light-grey-back grey pt-0 border-0 text-left">
@@ -44,26 +44,6 @@
                     {% else %}
                     <div>
                         <h2>No Projects Yet</h2>
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:1 %}
-                    <div class="col-12 d-sm-none mb-5">
-                        <hr>
-                    </div>
-                    {% endif %}                        
-                    {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                        <hr>
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                        <hr>
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 %}
-                    <div class="col-12 d-none d-xl-block mb-5">
-                        <hr>
                     </div>
                     {% endif %}
                 {% endfor %}
