@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from .forms import ContactForm
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail
 from django.http import HttpResponse
 
 
@@ -22,15 +22,12 @@ def contact(request):
             cust_email = contact_form['email_address'].value()
             subject = "Inquiry from: " + cust_email
 
-            try:
-                send_mail(
-                    subject,
-                    message,
-                    [settings.DEFAULT_FROM_EMAIL],
-                    [settings.DEFAULT_TO_EMAIL]
-                )
-            except BadHeaderError:
-                return messages.error(request, 'Invalid header found.')
+            send_mail(
+                subject,
+                message,
+                [settings.DEFAULT_FROM_EMAIL],
+                [settings.DEFAULT_TO_EMAIL]
+            )
             messages.success(request, 'Your message has been sent, \
                 we will get back to you as soon as possible!')
             return redirect("home")
