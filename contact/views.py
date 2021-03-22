@@ -18,15 +18,16 @@ def contact(request):
                 'phone_number': contact_form.cleaned_data['phone_number'],
                 'message': contact_form.cleaned_data['message'],
             }
-            message = "\n".join(body.values())
+            message = '\n'.join(body.values())
             cust_email = contact_form['email_address'].value()
-            subject = "Inquiry from: " + cust_email
+            subject = 'Inquiry from: ' + cust_email
+            receiving_email = 'broadesigns@outlook.com'
 
             send_mail(
                 subject,
                 message,
                 settings.DEFAULT_FROM_EMAIL,
-                settings.DEFAULT_FROM_EMAIL
+                [receiving_email]
             )
             messages.success(request, 'Your message has been sent, \
                 we will get back to you as soon as possible!')
