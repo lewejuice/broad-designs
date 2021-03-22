@@ -25,8 +25,8 @@ def contact(request):
             send_mail(
                 subject,
                 message,
-                [settings.DEFAULT_FROM_EMAIL],
-                [settings.DEFAULT_TO_EMAIL]
+                settings.DEFAULT_FROM_EMAIL,
+                settings.DEFAULT_FROM_EMAIL
             )
             messages.success(request, 'Your message has been sent, \
                 we will get back to you as soon as possible!')
