@@ -1,3 +1,4 @@
+<!---------Display the current order--------->
 <div class="order-container">
     <div class="row">
         <div class="col">
@@ -5,6 +6,7 @@
         </div>
     </div>
     <div>
+        <!-------Display each service that is in the order-------->
         <div class="row">
             <div class="col">
                 {% if order_items %}
@@ -16,6 +18,7 @@
                 {% endif %}
             </div>
             <hr>
+            <!------Display the total of the order------->
             <div class="w-100">
                 <h2>Project Total: £{{ order_total }}</h2>
             </div>

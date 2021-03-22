@@ -4,12 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 from services.models import Services
 
-# Create your views here.
-
 
 @login_required
 def bagged_services(request):
-    """ A view to navigate to the what we do page and manage order form """
+    """
+    A view to navigate to the bagged services page,
+    so users can add or delete items in their order.
+    """
 
     services = Services.objects.all()
     design_services = Services.objects.filter(category='1')

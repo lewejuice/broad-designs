@@ -1,6 +1,8 @@
+<!-----------Display services as icons in design services------------->
 <div class="row service-icons-container">
     {% for service in design_services %}
         <div class="col-lg-3 col-md-6 col-sm-12">
+            <!-------Fill the button if it has been selected-------->
             <a class="{% if service.id in order_objects %}btn btn-primary service-icon-option{% else %}btn btn-outline-primary service-icon-option{% endif %}" id="{{ service.service_id }}" href="{% url 'add_to_order' service.id %}">{{ service.name }}</a>
         </div>
     {% endfor %}

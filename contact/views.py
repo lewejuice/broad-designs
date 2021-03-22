@@ -6,8 +6,10 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 
 
-# Create your views here.
 def contact(request):
+    """
+    A view to render a contact form, so users can ask questions via email
+    """
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():

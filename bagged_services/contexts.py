@@ -7,7 +7,10 @@ from contact.forms import ContactForm
 
 
 def order_contents(request):
-
+    """
+    A context to enable the contact for to render on each page,
+    and too hold the order info.
+    """
     order_items = []
     order_total = 0
     order = request.session.get('order', {})
