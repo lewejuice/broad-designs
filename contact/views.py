@@ -31,4 +31,6 @@ def contact(request):
             messages.success(request, 'Your message has been sent, \
                 we will get back to you as soon as possible!')
             return redirect("home")
+    messages.error(request, 'We are very sorry, \
+                there seems to be a problem!')
     return render(request, "contact/contact.html")
