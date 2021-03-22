@@ -11,7 +11,6 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            subject = "Inquiry"
             body = {
                 'first_name': contact_form.cleaned_data['first_name'],
                 'last_name': contact_form.cleaned_data['last_name'],
@@ -21,12 +20,13 @@ def contact(request):
             }
             message = "\n".join(body.values())
             cust_email = contact_form['email_address'].value()
+            subject = "Inquiry from: " + cust_email
 
             try:
                 send_mail(
                     subject,
                     message,
-                    cust_email,
+                    [settings.DEFAULT_FROM_EMAIL],
                     [settings.DEFAULT_FROM_EMAIL]
                 )
             except BadHeaderError:

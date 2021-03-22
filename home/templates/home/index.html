@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+    <!--------------Two button options to take users to see the code or design portfolios------------->
     <div class="h-lg-100 design-code-container">
         <div class="row design-code-imgs">
             <div class="col-md-6 col-xs-12 design-div option-div">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    <!-----------Intoduction to the company------------->
     <div class="intro-container">
         <div class="row g-0 w-100 service red-back">
             <div class="col-lg-6 col-md-12 service-description service-text-div">
@@ -41,6 +43,7 @@
                 <img class="service-img" src="{{ MEDIA_URL }}web-designer.jpg">
             </div>
         </div>
+        <!-----------Brief description on what the company does------------->
         <div class="row g-0 w-100 service blue-back">
             <div class="col-lg-6">
                 <img class="service-img" src="{{ MEDIA_URL }}codecode.jpg">
@@ -55,10 +58,12 @@
                 <p class="white about-us-text">
                     Creating striking offline and online material is our speciality. Whatever your line of work, We have the skills and vision to help your business stand out from the crowd.
                 </p>
+                <!-----------Button to take user to the services screen------------>
                 <a class="btn btn-primary" href="{% url 'services' %}">EXPLORE</a>
             </div>
         </div>
     </div>
+    <!-----------Link for user to start creating an order------------->
     <div class="center col-12 mx-auto get-quote-btn-container grey-back">
         <h3 class="white">Bring your ideas to life, and click here to start your project with us.</h3>
         <a href="{% url 'bagged_services' %}"><button class="btn btn-primary get-quote-btn" type="button">CREATE ORDER</button></a>

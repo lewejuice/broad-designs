@@ -1,3 +1,5 @@
+/* --------------Main----------------*/
+
 html {
     height: 100%;
 }
@@ -703,7 +705,7 @@ body {
 }
 
 .order-useful-img {
-    width: 60%;
+    width: 30%;
     padding: 1rem;
 }
 
@@ -719,6 +721,10 @@ body {
 
     .order-detail-manage {
         font-size: 1.2rem;
+    }
+
+    .order-useful-img {
+        width: 50%;
     }
 }
 

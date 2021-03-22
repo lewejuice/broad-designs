@@ -3,6 +3,8 @@ from .models import Services, Category
 
 
 class ServiceAdmin(admin.ModelAdmin):
+    """ Fields needed for the services """
+
     list_display = (
         'name',
         'category',
@@ -13,6 +15,8 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Fields needed for the categories """
+
     list_display = (
         'friendly_name',
         'name',

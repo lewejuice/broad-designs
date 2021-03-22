@@ -1,3 +1,4 @@
+// Google maps API JS function, obtained from the google documentation
 var mapsApiKey = $('#id_maps_api_key').text().slice(1, -1);
 
 function initMap() {
@@ -6,6 +7,7 @@ function initMap() {
     zoom: 9,
     mapId: 'f1e2fa33d3b68b37'
   });
+  // Broad designs logo file for the map marker
   const image =
     "https://broad-designs.s3.eu-west-2.amazonaws.com/media/bdesignlogo.png";
   var icon = {

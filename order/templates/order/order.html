@@ -18,6 +18,7 @@
 <div class="row order-form-container">
     <div id="design-form-conatiner" class="design-quote-container col-lg-9 col-md-12">
         <p class="text-muted">Please fill out the form below to complete your order:</p>
+        <!---------------Form for user to provide their order details and payment information--------------->
         <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data" id="payment-form">
             {% csrf_token %}
             <fieldset class="rounded px-3">
@@ -48,6 +49,7 @@
                     </div>
                 </div>
             </fieldset>
+            <!----------Address Information---------->
             <fieldset class="rounded px-3 mb-5">
                 <legend class="fieldset-label px-2 w-auto">Address Information</legend>
                 {{ order_form.phone_number | as_crispy_field }}
@@ -57,6 +59,7 @@
                 {{ order_form.county | as_crispy_field }}
                 {{ order_form.country | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
+                <!------------Give users the choice to save their personal information------------->
                 <div class="form-check form-check-inline float-right mr-0">
                     {% if user.is_authenticated %}
                     <label class="form-check-label" for="id-save-info">Save my address information to my profile</label>
@@ -69,6 +72,7 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <!---------Payment card element from Stripe----------->
             <fieldset class="px-3">
                 <legend class="fieldset-label px-2 w-auto">Payment</legend>
                 <!-- A Stripe card element will go here -->
@@ -94,6 +98,7 @@
             </div>
         </form>
     </div>
+    <!---------------Display what items are currently in their order---------------->
     <div class="col-lg-3 col-md-12 order-items-container red-back white">
         <h2 class="your-services-head">Your Services:</h2>
         {% if order_items %}
@@ -107,6 +112,7 @@
         <div class="total">
             <h2>Project Total: £{{ order_total }}</h2>
         </div>
+        <!----------Option to go back to ammend their order--------->
         <a href="{% url 'bagged_services' %}"><button type="button" class="btn btn-outline-light amend_services_btn"><i class="fas fa-arrow-left"></i> Ammend Order</button></a>
     </div>    
 </div>

@@ -12,7 +12,7 @@ from profiles.models import UserProfile
 
 @login_required
 def management(request):
-    """ A view to navigate to the what we do page """
+    """ A view to navigate to the management page if user is a superuser """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -155,7 +155,7 @@ def add_project(request):
 
 @login_required
 def edit_project(request, project_id):
-    """ Edit a service """
+    """ Edit a project """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -215,6 +215,9 @@ def delete_project(request, project_id):
 
 @login_required
 def order_info(request, order_number):
+    """
+    Display order information on the order selected
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

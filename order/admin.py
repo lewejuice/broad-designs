@@ -3,6 +3,7 @@ from .models import Order
 
 
 class OrdersAdmin(admin.ModelAdmin):
+    """ All fields needed for the order """
 
     readonly_fields = ('order_number', 'date', 'order_total', 'stripe_pid')
 

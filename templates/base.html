@@ -47,6 +47,7 @@
 </head>
 
 <body>
+     <!-- Nav Bar -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -98,6 +99,7 @@
         </nav>
     </header>
 
+    <!-----------Toasts------------->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -124,6 +126,7 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
+        // Javascript for Toasts
         var toastElList = [].slice.call(document.querySelectorAll('.toast'));
         var toastList = toastElList.map(function (toastEl) {
             return new bootstrap.Toast(toastEl)
@@ -133,6 +136,7 @@
                 this.style.setProperty( 'opacity', '0', 'important' );
             });
         }
+        // Service Icon switch bar from design to code
         $('#btnradio1').click(function() {
             $('#design-service-icons').css("display", "block");
             $('#code-service-icons').css("display", "none");
@@ -143,7 +147,7 @@
         });
     </script>
     {% endblock %}
-
+    <!-----------Footer includes------------->
     {% if request.get_full_path != "/contact/" %}
         {% include 'includes/recent_works.html' %}
     {% endif %}  

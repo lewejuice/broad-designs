@@ -11,6 +11,7 @@
     </div>
 {% endblock %}
 {% block content %}
+    <!------------Service Management----------->
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -20,13 +21,16 @@
             </div>
         </div>
         <div class="row">
+            <!--------------Add a new service button---------------->
             <div class="col-md-4 management-btn">
                 <a class="btn btn-success w-100" href="{% url 'add_service' %}">Add service <i class="fas fa-plus-circle"></i></a>
             </div>
+            <!--------------Edit an existing service---------------->
             <div class="dropdown col-md-4 management-btn">
                 <button class="btn btn-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Edit service <i class="fas fa-edit"></i>
                 </button>
+                <!--------------Drop down to display all services organised via their category---------------->
                 <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
@@ -40,10 +44,12 @@
                     {% endif %}    
                 </ul>
             </div>
+            <!--------------Delete a service---------------->
             <div class="dropdown col-md-4 management-btn">
                 <button class="btn btn-danger dropdown-toggle w-100" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     Delete service <i class="fas fa-trash-alt"></i>
                 </button>
+                <!----------------Drop down to display all services organised via their category-------------->
                 <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton2">
                     {% if services %}
                         <li><h6 class="dropdown-header">Design Services</h6></li>
@@ -59,6 +65,7 @@
             </div>
         </div>
     </div>
+    <!--------------Portfolio management---------------->
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -68,13 +75,16 @@
             </div>
         </div>
         <div class="row">
+            <!------------Add a new project to portfolio------------>
             <div class="col-md-4">
                 <a class="btn btn-success w-100 management-btn" href="{% url 'add_project' %}">Add project <i class="fas fa-plus-circle"></i></a>
             </div>
+            <!--------------Edit an existing project---------------->
             <div class="dropdown col-md-4 management-btn">
                 <button class="btn btn-primary dropdown-toggle w-100" type="button" id="edit-project" data-bs-toggle="dropdown" aria-expanded="false">
                     Edit project <i class="fas fa-edit"></i>
                 </button>
+                <!----------------Drop down to display all projects organised via their category-------------->
                 <ul class="dropdown-menu w-100" aria-labelledby="edit-project">
                     {% if portfolio %}
                         <li><h6 class="dropdown-header">Design Projects</h6></li>
@@ -88,6 +98,7 @@
                     {% endif %}    
                 </ul>
             </div>
+            <!------------Delete a project from portfolio----------->
             <div class="dropdown col-md-4 management-btn">
                 <button class="btn btn-danger dropdown-toggle w-100" type="button" id="delete-project" data-bs-toggle="dropdown" aria-expanded="false">
                     Delete project <i class="fas fa-trash-alt"></i>
@@ -107,6 +118,7 @@
             </div>
         </div>
     </div>
+    <!------------List of all orders made, starting with the most recent-------------->
     <div class="container">
         <div class="row">
             <div class="col-12">

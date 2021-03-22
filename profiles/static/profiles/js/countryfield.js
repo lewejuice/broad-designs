@@ -1,3 +1,4 @@
+// Change colour of country field to suit the rest of the form
 let countrySelected = $('#id_default_country').val();
 if(!countrySelected) {
     $('#id_default_country').css('color', '#6e767e');

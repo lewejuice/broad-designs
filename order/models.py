@@ -8,6 +8,9 @@ from django_countries.fields import CountryField
 
 
 class Order(models.Model):
+    """
+    Model to allow users to input their order/personal details
+    """
 
     class Meta:
         verbose_name_plural = 'Orders'

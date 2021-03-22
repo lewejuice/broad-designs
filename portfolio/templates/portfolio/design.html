@@ -15,6 +15,7 @@
     <div class="row">
         <div class="portfolio-container">
             <div class="row mt-1 mb-2"></div>
+            <!---------------Display all portfolios in the design category----------------->
             <div class="row">
                 {% for project in projects %}
                     {% if project %}
@@ -41,6 +42,7 @@
                             </div>
                         </div>
                         {% endif %}
+                    <!---------------If no projects found display no projects----------------->
                     {% else %}
                     <div>
                         <h2>No Projects Yet</h2>
@@ -49,6 +51,7 @@
                 {% endfor %}
             </div>
         </div>  
+        <!---------------Button to go to create an order----------------->
         <div class="center col-12 mx-auto get-quote-btn-container grey-back">
             <h3 class="white">Bring your ideas to life, and click here to start your project with us.</h3>
             <a href="{% url 'bagged_services' %}"><button class="btn btn-primary get-quote-btn" type="button">CREATE ORDER</button></a>

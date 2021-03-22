@@ -4,6 +4,7 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """ Form to allow users to fill in their order and personal information """
     class Meta:
         model = Order
         fields = ('project_name', 'target_audience',

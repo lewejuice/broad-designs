@@ -3,7 +3,7 @@ from .models import Portfolio
 
 
 def all_design(request):
-    """ A view to navigate to the design page and display portfolio of design work"""
+    """ A view to navigate to the design page and display design work"""
     projects = Portfolio.objects.all()
 
     context = {
@@ -14,7 +14,7 @@ def all_design(request):
 
 
 def all_code(request):
-    """ A view to navigate to the code page """
+    """ A view to navigate to the code page and display coding work """
     projects = Portfolio.objects.all()
 
     context = {

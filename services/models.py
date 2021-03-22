@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
+    """ The model to set up the categories """
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -17,6 +18,7 @@ class Category(models.Model):
 
 
 class Services(models.Model):
+    """ The model to set up the services """
 
     class Meta:
         verbose_name_plural = 'Services'

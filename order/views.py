@@ -16,6 +16,9 @@ import stripe
 
 @require_POST
 def cache_order_data(request):
+    """
+    Cache order data for the stripe webhook
+    """
     if request.POST.get('useful_links') == '':
         useful_links = 'None'
     else:
@@ -74,6 +77,7 @@ def order(request):
     total = get_order_total(request)
     service_order = get_order_services(request)
 
+    # Save order on form submission
     if request.method == 'POST':
         order = request.session.get('order', {})
         order_form = OrderForm(request.POST, request.FILES)
@@ -86,14 +90,16 @@ def order(request):
             order.order_total = total
             order.save()
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('order_success', args=[order.order_number]))
+            return redirect(reverse('order_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         order = request.session.get('order', {})
         if not order:
-            messages.error(request, "There's nothing in your order at the moment")
+            messages.error(request,
+                           "There's nothing in your order at the moment")
             return redirect(reverse('bagged_services'))
 
     stripe_total = round(total * 100)
