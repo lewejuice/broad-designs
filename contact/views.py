@@ -21,7 +21,7 @@ def contact(request):
             message = '\n'.join(body.values())
             cust_email = contact_form['email_address'].value()
             subject = 'Inquiry from: ' + cust_email
-            receiving_email = 'broadesigns@outlook.com'
+            receiving_email = settings.DEFAULT_FROM_EMAIL
 
             send_mail(
                 subject,
