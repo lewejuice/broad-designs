@@ -27,7 +27,7 @@ def contact(request):
                     subject,
                     message,
                     [settings.DEFAULT_FROM_EMAIL],
-                    [settings.DEFAULT_FROM_EMAIL]
+                    [settings.DEFAULT_TO_EMAIL]
                 )
             except BadHeaderError:
                 return messages.error(request, 'Invalid header found.')
