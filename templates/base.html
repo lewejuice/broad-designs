@@ -77,16 +77,16 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <ul class="dropdown-menu center bootstrap-grey-back" aria-labelledby="navbarDropdownMenuLink">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <li><a href="{% url 'management' %}" class="dropdown-item">Management</a></li>
+                                <li><a href="{% url 'management' %}" class="dropdown-item white">Management</a></li>
                                 {% endif %}
-                                <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                <li><a href="{% url 'profile' %}" class="dropdown-item white">My Profile</a></li>
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item white">Logout</a></li>
                                 {% else %}
-                                <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                                <li><a href="{% url 'account_signup' %}" class="dropdown-item white">Register</a></li>
+                                <li><a href="{% url 'account_login' %}" class="dropdown-item white">Login</a></li>
                                 {% endif %}
                             </ul>
                         </li>

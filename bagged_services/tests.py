@@ -13,6 +13,9 @@ class TestViews(TestCase):
         self.user = User.objects.create_user(
             username="TestUser", password="Passw0rd")
         self.client.login(username="TestUser", password="Passw0rd")
+        Services.objects.create(
+            name="Test Service",
+            price=10.00).save()
 
     def test_get_bagged_services(self):
         response = self.client.get('/bagged_services/')
@@ -21,10 +24,9 @@ class TestViews(TestCase):
                                 'bagged_services/bagged_services.html')
 
     def test_can_add_to_order(self):
-        service = get_object_or_404(Services, pk=service_id[0])
-        response = self.client.post(f'/add/{service.service_id}',
-                                    {'service_id': 50})
-        self.assertEqual(response.status_code, 200)
+        order = self.client.session
+        service = Services.objects.get(name="Test Service")
+        response = self.client.post(f'/bagged_services/add/{service}')
         self.assertRedirects(response, '/')
 
 
