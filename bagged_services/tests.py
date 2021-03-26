@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib.auth.models import User
-from services.models import Services
+from services.models import Services, Category
 
 
 class TestViews(TestCase):
@@ -13,6 +13,8 @@ class TestViews(TestCase):
         self.user = User.objects.create_user(
             username="TestUser", password="Passw0rd")
         self.client.login(username="TestUser", password="Passw0rd")
+        Category.objects.create(
+            name="Test Category").save()
         Services.objects.create(
             name="Test Service",
             price=10.00).save()
@@ -23,11 +25,9 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response,
                                 'bagged_services/bagged_services.html')
 
-    def test_can_add_to_order(self):
-        order = self.client.session
+    def test_can_add_and_remove_from_order(self):
         service = Services.objects.get(name="Test Service")
-        response = self.client.post(f'/bagged_services/add/{service}')
-        self.assertRedirects(response, '/')
+        response = self.client.post(f'/bagged_services/add/{service.id}/')
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/bagged_services/')
 
-
-    # def test_can_remove_from_order(self):

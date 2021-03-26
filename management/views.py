@@ -107,7 +107,6 @@ def delete_service_page(request, service_id):
 
     context = {
         'service': service,
-        
     }
 
     return render(request, template, context)

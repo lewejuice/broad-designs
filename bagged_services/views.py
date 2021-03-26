@@ -34,16 +34,18 @@ def add_to_order(request, service_id):
 
     if service_id in list(order.keys()):
         remove_from_order(request, service_id, order)
-    else:
+    elif service_id not in list(order.keys()):
         order[service_id] = 1
         messages.success(request, f'Added {service.name} to your order')
+    else:
+        messages.error(request, 'Oops something went wrong')
+        return render(request, 'bagged_services.html')
 
     request.session['order'] = order
 
     return redirect(reverse("bagged_services"))
 
 
-@login_required
 def remove_from_order(request, service_id, order):
     """Remove item from the order"""
 
