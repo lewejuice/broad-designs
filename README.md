@@ -163,6 +163,20 @@
 <li>I did not include the design for my modal as I thought, instead of loading a new page, a modal window pop up is more efficient.</li>
 </ul>
 <h2><a id="user-content-technologies-used" class="anchor" aria-hidden="true" href="#technologies-used"></a>Technologies Used</h2>
+<ol>
+<li>
+<p><a href="https://balsamiq.com/" rel="nofollow">Balsamiq</a> - Used to bring my wireframe sketches to life.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" rel="nofollow">Adobe Illustrator</a> - Used for building the website logo.</p>
+</li>
+<li>
+<p><a href="https://github.com/">GitHub</a> - I used to store my repository for the project and record all my commits.</p>
+</li>
+<li>
+<p><a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a> - Used as my primary IDE for developing projects.</p>
+</li>
+</ol>
 <h3>Front End Technologies</h3>
 <ol>
 <li>
@@ -209,9 +223,6 @@
 </li>
 <li>
 <p><a href="https://dashboard.heroku.com/apps" rel="nofollow">Heroku</a> - Used for "Platform as a Service" (PaaS) for app hosting.</p>
-</li>
-<li>
-<p><a href="https://github.com/">GitHub</a> - I used to store my repository for the project and record all my commits.</p>
 </li>
 </ol>
 <p>Further details on all Python packages used on this project can be found in the <a href="https://github.com/lewejuice/broad-designs/blob/master/requirements.txt" rel="nofollow">requirements.txt file</a>. Each of these is outlined below (click below to expand the dropdown), with the package version and a brief description.</p>
@@ -404,11 +415,35 @@
 <ul>
 <li>Users should be given the opportunity to delete their account entirely. Currently they can register and edit their data, but not remove it from the database.</li>
 </ul>
+
+
+
 <h2><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"></a>Testing</h2>
-<p>You can view the testing done in the <a href="https://github.com/lewejuice/what_film/blob/master/test.md">test.md</a> where I have written in-depth on the various tests I have performed.</p>
+<p>A thorough mix of automated and manual testing have gone into building this project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.</p>
+<h3>Validators</h3>
+<p><strong>HTML</strong></p>
+<ul>
+<li><a href="https://validator.w3.org" rel="nofollow">W3C HTML Validator</a>
+<ul>
+<li>All <strong>30 .html</strong> files checked.</li>
+<li><strong>5 .html</strong> files contained minor errors that have since been rectified (<em>statistics, navbar, ticket_card, ticket_filter, ticket_stats</em>). <a href="https://github.com/TravelTimN/ci-milestone05-fsfw/commit/416a5e483b2b380d4fe8023c34224b74ae772354">Correction Commit: 416a5e4</a></li>
+<li><strong>Error</strong>: Attribute <code>lazyload</code> not allowed on element <code>img</code> at this point.</li>
+<li>The remaining validation issues are all attributed to Django Templating not being recognized by W3C:
+<ul>
+<li><strong>Warning</strong>: Consider adding a <code>lang</code> attribute to the <code>html</code> start tag to declare the language of this document.</li>
+<li><strong>Error</strong>: Non-space characters found without seeing a doctype first. Expected <code>&lt;!DOCTYPE html&gt;</code>.</li>
+<li><strong>Warning</strong>: This document appears to be written in English. Consider adding <code>lang="en"</code> (or variant) to the <code>html</code> start tag.</li>
+<li><strong>Error</strong>: Element <code>head</code> is missing a required instance of child element <code>title</code>.</li>
+<li><strong>Error</strong>: Bad value <code>{% foo %}</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
 
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
-
 <p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through <a href="https://github.com/lewejuice/broad-designs">repository in GitHub</a>.</p>
 <p>The live site was deployed via <a href="https://www.heroku.com/" rel="nofollow">Heroku</a>. The deployed site will update when pushed from to heroku via gitpod terminal. The Heroku app location can be found <a href="https://broad-designs.herokuapp.com/">here.</a></p>
 <p><strong>PLEASE NOTE</strong>: during development, none of my <em>staticfiles</em> were pushed to GitHub, as taught in the Code Institute LMS videos. These were added to my <em><a href="https://github.com/lewejuice/broad-designs/blob/master/.gitignore">.gitignore</a></em> file, as Heroku cannot host these files. They are hosted on Amazon AWS in an S3-Bucket. These files were pushed to GitHub purely for project assessment purposes only at the end of development! My <em>static</em> files contains the following folders and files:</p>

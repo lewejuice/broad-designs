@@ -84,8 +84,7 @@ body {
 }
 
 .contact-nav {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    margin: 0 .5rem;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -40,13 +40,13 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                <img class="service-img" src="{{ MEDIA_URL }}web-designer.jpg">
+                <img class="service-img" alt="web-design" src="{{ MEDIA_URL }}web-designer.jpg">
             </div>
         </div>
         <!-----------Brief description on what the company does------------->
         <div class="row g-0 w-100 service blue-back">
             <div class="col-lg-6">
-                <img class="service-img" src="{{ MEDIA_URL }}codecode.jpg">
+                <img class="service-img" alt="code-image" src="{{ MEDIA_URL }}codecode.jpg">
             </div>
             <div class="col-lg-6 col-md-12 right-align service-text-div">
                 <h1 class="display-4 center white about-us-sub-heading">
@@ -66,6 +66,6 @@
     <!-----------Link for user to start creating an order------------->
     <div class="center col-12 mx-auto get-quote-btn-container grey-back">
         <h3 class="white">Bring your ideas to life, and click here to start your project with us.</h3>
-        <a href="{% url 'bagged_services' %}"><button class="btn btn-primary get-quote-btn" type="button">CREATE ORDER</button></a>
+        <a class="btn btn-primary get-quote-btn" href="{% url 'bagged_services' %}">CREATE ORDER</a>
     </div>
 {% endblock %}
