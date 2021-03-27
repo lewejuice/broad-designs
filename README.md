@@ -143,7 +143,7 @@
 <h3><a id="user-content-wireframes" class="anchor" aria-hidden="true" href="#wireframes"></a>Wireframes</h3>
 <ul>
 <li>
-<p>The wireframes for the initial layout in the planning stage of the website were created using <a href="https://balsamiq.com/" rel="nofollow">Balsamiq</a>. I chose to use Balsamiq for their simplicity and ease of use in a quick and effective manner. You can view the wireframes for Broad Design <a href="https://github.com/lewejuice/what_film/tree/master/wireframes">here</a>.</p>
+<p>The wireframes for the initial layout in the planning stage of the website were created using <a href="https://balsamiq.com/" rel="nofollow">Balsamiq</a>. I chose to use Balsamiq for their simplicity and ease of use in a quick and effective manner. You can view the wireframes for Broad Design <a href="https://github.com/lewejuice/broad-designs/tree/master/media/wireframes">here</a>.</p>
 </li>
 <li>
 <p>The wireframes include a design layout for Desktop and Mobile.</p>
