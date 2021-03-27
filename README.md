@@ -425,21 +425,152 @@
 <ul>
 <li><a href="https://validator.w3.org" rel="nofollow">W3C HTML Validator</a>
 <ul>
-<li>All <strong>30 .html</strong> files checked.</li>
-<li><strong>5 .html</strong> files contained minor errors that have since been rectified (<em>statistics, navbar, ticket_card, ticket_filter, ticket_stats</em>). <a href="https://github.com/TravelTimN/ci-milestone05-fsfw/commit/416a5e483b2b380d4fe8023c34224b74ae772354">Correction Commit: 416a5e4</a></li>
-<li><strong>Error</strong>: Attribute <code>lazyload</code> not allowed on element <code>img</code> at this point.</li>
-<li>The remaining validation issues are all attributed to Django Templating not being recognized by W3C:
+<li>All <strong>.html</strong> files checked.</li>
+<li><strong>base.html</strong> file contained minor errors that have since been rectified (<em>Had a button element within an anchor element and type inside script tag for JS</em>). <a href="https://github.com/lewejuice/broad-designs/commit/master">Correction Commit: f1e7c6a301ede885654d9960234424e4716650ce</a></li>
+<li><strong>Error</strong>: Had a button element within an anchor element.</li>
+<li><strong>Error</strong>: Type inside script tag for JS.</li>
+<li>The remaining validation issues are all attributed to comments made with hyphens to organise sections of code:
 <ul>
-<li><strong>Warning</strong>: Consider adding a <code>lang</code> attribute to the <code>html</code> start tag to declare the language of this document.</li>
-<li><strong>Error</strong>: Non-space characters found without seeing a doctype first. Expected <code>&lt;!DOCTYPE html&gt;</code>.</li>
-<li><strong>Warning</strong>: This document appears to be written in English. Consider adding <code>lang="en"</code> (or variant) to the <code>html</code> start tag.</li>
-<li><strong>Error</strong>: Element <code>head</code> is missing a required instance of child element <code>title</code>.</li>
-<li><strong>Error</strong>: Bad value <code>{% foo %}</code>.</li>
+<li><strong>Warning</strong>: The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<p><strong>CSS</strong></p>
+<ul>
+<li><a href="https://validator.w3.org" rel="nofollow">W3C CSS Validator</a>
+<ul>
+<li>The W3C Jigsaw validator does not yet recognize some bootstrap5 styling, and therefore passes 6 Parse Errors, 5 Unknown pseudo-element or pseudo-class and 5 Property doesn't exist. The sixteen Errors I've received  consisted of:
+<ul>
+<li><code>abbr[data-bs-original-title], abbr[title]</code></li>
+<li><code>.row</code></li>
+<li><code>	.table > :not(caption) > * > *</code></li>
+<li><code>.form-control::-webkit-file-upload-button</code></li>
+<li><code>.accordion-button</code></li>
+</ul>
+</li>
+<li>I also received 406 Warnings all from these bootstrap5 styling :
+<ul>
+<li><code>.custom-checkbox</code></li>
+<li><code>.custom-control-input:checked</code></li>
+<li><code>.custom-control-label::before</code></li>
+<li><code>Same color for background-color and border-color</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>JavaScript</strong></p>
+<li><a href="https://jshint.com/" rel="nofollow">JShint</a>
+<ul>
+<li><strong>stripe_elements.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/static/order/js/stripe_elements.js">file</a>:
+<ul>
+<li>METRICS:
+<ul>
+<li>There are <strong>5</strong> functions in this file. Function with the largest signature take <strong>1</strong> arguments, while the median is <strong>1</strong>. Largest function has <strong>14</strong> statements in it, while the median is <strong>5</strong>. The most complex function has a cyclomatic complexity value of <strong>3</strong> while the median is <strong>1</strong>..</li>
+</ul>
+</li>
+<li>UNDEFINED VARIABLES:
+<ul>
+<li><code>Stripe</code> (used for Stripe API)</li>
+<li><code>$</code> (used for jQuery)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>base.html scripts</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/templates/base.html">file</a>:
+<ul>
+<li>METRICS:
+<ul>
+<li>There are 6 functions in this file. Function with the largest signature take 1 arguments, while the median is 0. Largest function has 6 statements in it, while the median is 1.5. The most complex function has a cyclomatic complexity value of 1 while the median is 1.</li>
+</ul>
+</li>
+<li>UNDEFINED VARIABLES:
+<ul>
+<li><code>$</code> (used for jQuery)</li>
+<li><code>bootstrap</code> (used for bootstrap5)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>google_maps.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/contact/static/contact/js/google_maps.js">file</a>:
+<ul>
+<li>METRICS:
+<ul>
+<li>There is only one function in this file. It takes no arguments. This function contains 4 statements. Cyclomatic complexity number for this function is 1.</li>
+</ul>
+</li>
+<li>UNDEFINED VARIABLES:
+<ul>
+<li><code>$</code> (used for jQuery)</li>
+<li><code>google</code> (used for Google maps API)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://beautifytools.com/javascript-validator.php" rel="nofollow">Beautify Tools</a>
+<ul>
+<li><strong>stripe_elements.js</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/stripe.js">file</a>:
+<ul>
+<li><em><code>Stripe</code> is not defined.</em></li>
+</ul>
+</li>
+<li><strong>base.html scripts</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/scripts.js">file</a>:
+<ul>
+<li><code>$</code> is not defined.</li>
+<li><code>bootstrap</code> is not defined.</li>
+<li><em><code>Tawk_LoadStart</code> is defined but never used..</em></li>
+<li><em><code>toastList</code> is defined but never used..</em></li>
+<li><em><code>hideToast</code> is defined but never used..</em></li>
+</ul>
+</li>
+<li><strong>google_maps.js</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/scripts.js">file</a>:
+<ul>
+<li><em><code>google</code> is not defined.</em></li>
+<li><code>$</code> is not defined.</li>
+<li><em><code>beachMarker</code> is defined but never used.</em></li>
+<li><em><code>mapsApiKey</code> is defined but never used.</em></li>
+<li><em><code>initMap</code> is defined but never used..</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<p><strong>Python</strong></p>
+<ul>
+<li><a href="http://pep8online.com/" rel="nofollow">PEP8 Online</a>
+<ul>
+<li>All <strong>71 .py</strong> files checked.</li>
+<li>Entirely <strong>PEP8 compliant</strong> with one exception:
+<ul>
+<li><code>webhooks.py</code> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/webhooks.py">file</a> (I have one line too long on line 43, as I cant find a way to indent it.)</li>
+<li><em>line too long (&gt;79 characters)</em> -  <code>'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,</code> x4</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Compatibility</h3>
+<p>To ensure a broad range of users can successfully use the site, I tested it across the 6 major browsers in both desktop and mobile configuration.</p>
+<ul>
+<li><strong>Chrome</strong> (<em>v.89.0.4389.90</em>)</li>
+<li><strong>Edge</strong> (<em>v.89.0.774.63</em>)</li>
+<li><strong>Firefox</strong> (<em>v.87.0</em>)</li>
+<li><strong>Safari</strong> (<em>v.14.0.3</em>)</li>
+<li><strong>Opera</strong> (<em>v.74.0.3911.232</em>)</li>
+<li><strong>Internet Explorer</strong> (<em>v.11.0.11</em>)</li>
+</ul>
+<h3>Testing Matrix</h3>
+<img src="media/readme-files/broad-design-testing-matrix.png" alt="Testing Matrix" title="Testing Matrix" style="max-width:100%;">
+<h3>Chrome's DevTools Audit Report</h3>
+<img src="media/readme-files/devtools-audit.png" alt="Audit Report" title="Audit Report" style="max-width:100%;">
+<h3>Automated Testing</h3>
+<p>With Django's built-in <code>unittest</code> library module and <code>TestCase</code> subclass, I built <strong>27</strong> different tests to encompass most of my python <em>views</em>, <em>forms</em>, and <em>models</em>. Using the <a href="https://coverage.readthedocs.io/en/v4.5.x/" rel="nofollow">coverage.py</a> test package, those 27 tests have provided an overall result of <strong>75% test coverage</strong>, which is within the approved minimum requirement for testing. All tests pass as '<em>OK</em>'! Most of the remaining Python that I didn't manually build tests for, are built-in Django boilerplates and core functionality. Below is a full table with the entire breakdown of the <strong>Coverage Report</strong> - click to expand the dropdown menu.</p>
+
+
+
 
 
 

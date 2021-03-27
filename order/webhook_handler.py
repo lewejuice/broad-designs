@@ -4,7 +4,6 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from .models import Order
-from bagged_services.contexts import order_contents
 from profiles.models import UserProfile
 
 import time

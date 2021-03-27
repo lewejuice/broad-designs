@@ -55,7 +55,9 @@ def add_service(request):
             messages.success(request, 'Successfully added service!')
             return redirect('management')
         else:
-            messages.error(request, 'Failed to add service. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add service. '
+                           'Please ensure the form is valid.')
     else:
         form = ServiceForm()
     template = 'management/add_service.html'
@@ -81,7 +83,8 @@ def edit_service(request, service_id):
             messages.success(request, 'Successfully updated service!')
             return redirect('management')
         else:
-            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update service.'
+                                    'Please ensure the form is valid.')
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')
@@ -137,10 +140,12 @@ def add_project(request):
         form = PortfolioForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added project to portfolio!')
+            messages.success(request, 'Successfully added '
+                                      'project to portfolio!')
             return redirect('management')
         else:
-            messages.error(request, 'Failed to add project. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add project. '
+                                    'Please ensure the form is valid.')
     else:
         form = PortfolioForm()
 
@@ -167,7 +172,8 @@ def edit_project(request, project_id):
             messages.success(request, 'Successfully updated project!')
             return redirect('management')
         else:
-            messages.error(request, 'Failed to update project. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update project. '
+                                    'Please ensure the form is valid.')
     else:
         form = PortfolioForm(instance=project)
         messages.info(request, f'You are editing {project.name}')

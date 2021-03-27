@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib.auth.models import User
 from services.models import Services, Category
 from portfolio.models import Portfolio, Portfolio_category

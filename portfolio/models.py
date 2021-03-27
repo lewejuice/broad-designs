@@ -13,7 +13,9 @@ class Portfolio_category(models.Model):
 
 
 class Portfolio(models.Model):
-    category = models.ForeignKey('Portfolio_category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Portfolio_category',
+                                 null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     project_date = models.DateField(null=True, blank=True)
     description = models.TextField(blank=True)
