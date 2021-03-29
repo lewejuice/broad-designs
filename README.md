@@ -415,9 +415,6 @@
 <ul>
 <li>Users should be given the opportunity to delete their account entirely. Currently they can register and edit their data, but not remove it from the database.</li>
 </ul>
-
-
-
 <h2><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"></a>Testing</h2>
 <p>A thorough mix of automated and manual testing have gone into building this project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.</p>
 <h3>Validators</h3>
