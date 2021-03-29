@@ -13,7 +13,3 @@ __pycache__/
 
 # local database
 *.sqlite3
-
-# local files
-static/
-media/
