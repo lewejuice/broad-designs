@@ -13,3 +13,6 @@ __pycache__/
 
 # local database
 *.sqlite3
+
+# coverage files
+.coverage
