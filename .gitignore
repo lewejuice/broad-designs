@@ -1,8 +1,19 @@
+# cores
 core.Microsoft*
 core.mongo*
 core.python*
+
+# environmental variables
 env.py
+
+# python
 __pycache__/
 *.py[cod]
-*.sqlite3
 *.pyc
+
+# local database
+*.sqlite3
+
+# local files
+static/
+media/

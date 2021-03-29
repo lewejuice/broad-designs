@@ -10,7 +10,7 @@
 <br>
 <p>This exciting application creates a simple, fuss free route for users to obtain professional designs and applications, with direct lines of communication like the <a href="https://www.tawk.to/" rel="nofollow" target="_blank">Tawk.to</a> instant messenger API for quick and simple responses to questions.</p>
 <br>
-<p>If you have any issues with the app, please head over to the <a href="https://broad-designs.herokuapp.com/" rel="nofollow" target="_blank">Broad Designs page and fill out a contact form or simply open the chat app and someone will get back to you as soon as possible.</a></p>
+<p>If you have any issues with the app, please head over to the <a href="https://broad-designs.herokuapp.com/" rel="nofollow" target="_blank">Broad Designs</a> page and fill out a contact form or simply open the chat app and someone will get back to you as soon as possible.</p>
 <br>
 <h3>Demo</h3>
 <p>A live demo can be found here <a href="https://broad-designs.herokuapp.com/" rel="nofollow" target="_blank">here</a>.</p>
@@ -479,7 +479,7 @@
 </li>
 </ul>
 </li>
-<li><strong>base.html scripts</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/templates/base.html">file</a>:
+<li><strong>main.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/static/js/main.js">file</a>:
 <ul>
 <li>METRICS:
 <ul>
@@ -513,12 +513,12 @@
 </li>
 <li><a href="http://beautifytools.com/javascript-validator.php" rel="nofollow">Beautify Tools</a>
 <ul>
-<li><strong>stripe_elements.js</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/stripe.js">file</a>:
+<li><strong>stripe_elements.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/static/order/js/stripe_elements.js">file</a>:
 <ul>
 <li><em><code>Stripe</code> is not defined.</em></li>
 </ul>
 </li>
-<li><strong>base.html scripts</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/scripts.js">file</a>:
+<li><strong>main.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/static/js/main.js">file</a>:
 <ul>
 <li><code>$</code> is not defined.</li>
 <li><code>bootstrap</code> is not defined.</li>
@@ -527,7 +527,7 @@
 <li><em><code>hideToast</code> is defined but never used..</em></li>
 </ul>
 </li>
-<li><strong>google_maps.js</strong> <a href="/TravelTimN/ci-milestone05-fsfw/blob/main/project/static/js/scripts.js">file</a>:
+<li><strong>google_maps.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/contact/static/contact/js/google_maps.js">file</a>:
 <ul>
 <li><em><code>google</code> is not defined.</em></li>
 <li><code>$</code> is not defined.</li>
@@ -567,13 +567,11 @@
 <h3>Chrome's DevTools Audit Report</h3>
 <img src="media/readme-files/devtools-audit.png" alt="Audit Report" title="Audit Report" style="max-width:100%;">
 <h3>Automated Testing</h3>
-<p>With Django's built-in <code>unittest</code> library module and <code>TestCase</code> subclass, I built <strong>27</strong> different tests to encompass most of my python <em>views</em>, <em>forms</em>, and <em>models</em>. Using the <a href="https://coverage.readthedocs.io/en/v4.5.x/" rel="nofollow">coverage.py</a> test package, those 27 tests have provided an overall result of <strong>75% test coverage</strong>, which is within the approved minimum requirement for testing. All tests pass as '<em>OK</em>'! Most of the remaining Python that I didn't manually build tests for, are built-in Django boilerplates and core functionality. Below is a full table with the entire breakdown of the <strong>Coverage Report</strong> - click to expand the dropdown menu.</p>
-
-
-
-
-
-
+<p>With Django's built-in <code>unittest</code> library module and <code>TestCase</code> subclass, I built <strong>30</strong> different tests to encompass most of my python <em>views</em> and <em>forms</em>. Using the <a href="https://coverage.readthedocs.io/en/v4.5.x/" rel="nofollow">coverage.py</a> test package, those 30 tests have provided an overall result of <strong>73% test coverage</strong>, which is within the approved minimum requirement for testing. All tests pass as '<em>OK</em>'! Most of the remaining Python that I didn't manually build tests for, are built-in Django boilerplates, core functionality and I did not manage to test the views on the Order app which I would like to add at a later date. Below is a full table with the entire breakdown of the <strong>Coverage Report</strong> - click to expand the dropdown menu.</p>
+<details open="">
+<summary>CLICK HERE to expand the full <b>Coverage Report</b></summary>
+<img src="media/readme-files/coverage.png" alt="Audit Report" title="Audit Report" style="max-width:100%;">
+</details>
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
 <p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through <a href="https://github.com/lewejuice/broad-designs">repository in GitHub</a>.</p>
 <p>The live site was deployed via <a href="https://www.heroku.com/" rel="nofollow">Heroku</a>. The deployed site will update when pushed from to heroku via gitpod terminal. The Heroku app location can be found <a href="https://broad-designs.herokuapp.com/">here.</a></p>
@@ -591,6 +589,7 @@
 </li>
 <li><strong>js/</strong>
 <ul>
+<li><em><a href="https://github.com/lewejuice/broad-designs/blob/master/static/js/main.js">main.js</a></em></li>
 <li><em><a href="https://github.com/lewejuice/broad-designs/blob/master/order/static/order/js/stripe_elements.js">stripe_elements.js</a></em></li>
 <li><em><a href="https://github.com/lewejuice/broad-designs/blob/master/contact/static/contact/js/google_maps.js">google_maps.js</a></em></li>
 </ul>
@@ -762,9 +761,15 @@
 </ul>
 </li>
 <li>
-<p>I used <a href="https://www.youtube.com/" rel="nofollow">Youtube</a>, here a useful youtube tutorial I followed for extra information.</p>
+<p>I used a <a href="https://www.youtube.com/" rel="nofollow">Youtube</a>, tutorial I followed for extra information.</p>
 <ul>
 <li>Help with <a href="https://www.youtube.com/results?search_query=bootstrap+5+toasts+with+django" rel="nofollow">Bootstrap5 toasts.</a></li>
+</ul>
+</li>
+<li>
+<p>I used <a href="https://codepen.io/" rel="nofollow">Code Pen</a> for useful tutorials.</p>
+<ul>
+<li>Help with <a href="https://codepen.io/bradtraversy/pen/dJzzdB" rel="nofollow">hover feature</a> on the home screen to choose between code and design.</li>
 </ul>
 </li>
 </ol>
@@ -786,6 +791,9 @@
 </li>
 <li>
 <p><a href="https://www.youtube.com/" rel="nofollow">Youtube</a>.</p>
+</li>
+<li>
+<p><a href="https://codepen.io/" rel="nofollow">Code Pen</a>.</p>
 </li>
 </ul>
 <h2><a id="user-content-disclaimer" class="anchor" aria-hidden="true" href="#disclaimer"></a>Disclaimer</h2>

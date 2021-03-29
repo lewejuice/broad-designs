@@ -10,6 +10,16 @@
 {% endblock %}
 
 {% block content %}
+    <div class="dc-container">
+        <div class="split left">
+            <h1 class="dc-h1 top-margin">The Designer</h1>
+            <a href="{% url 'design' %}" class="dc-button top-margin">View Portfolio</a>
+        </div>
+        <div class="split right">
+            <h1 class="dc-h1 top-margin">The Programmer</h1>
+            <a href="{% url 'code' %}" class="dc-button top-margin">View Portfolio</a>
+        </div>
+    </div>
     <!--------------Two button options to take users to see the code or design portfolios------------->
     <div class="h-lg-100 design-code-container">
         <div class="row design-code-imgs">
@@ -26,7 +36,7 @@
         </div>
     </div>
     <!-----------Intoduction to the company------------->
-    <div class="intro-container">
+    <div>
         <div class="row g-0 w-100 service red-back">
             <div class="col-lg-6 col-md-12 service-description service-text-div">
                 <h1 class="display-4 center white about-us-sub-heading">

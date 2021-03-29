@@ -82,6 +82,7 @@ def order(request):
         order = request.session.get('order', {})
         order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
+            print(order_form)
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
