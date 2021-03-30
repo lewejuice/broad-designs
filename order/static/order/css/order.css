@@ -50,6 +50,11 @@
   height: 100%;
 }
 
+.logo-spinner {
+  width: 20rem;
+  height: auto;
+}
+
 /* Change colour of filled in form input */
 
 select,
