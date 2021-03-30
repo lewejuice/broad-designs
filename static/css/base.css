@@ -96,12 +96,52 @@ body {
 }
 
 .oops-line {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .choice-btn {
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .error-container{
+    height: 60%;
+    padding-top: 10rem;
+  }
+
+  .choice-btn {
+    width: 15rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .error-type {
+    font-size: 10rem;
+  }
+
+  .error-logo {
     width: 10rem;
-    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .error-container{
+    height: 90%;
+  }
+
+  .error-type {
+    font-size: 5rem;
+  }
+
+  .error-logo {
+    width: 5rem;
+  }
+
+  .oops-line {
+    font-size: 1.3rem;
+  }
 }
 
 /* --------------Nav-bar----------------*/
