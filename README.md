@@ -15,16 +15,12 @@
 <h3>Demo</h3>
 <p>A live demo can be found here <a href="https://broad-designs.herokuapp.com/" rel="nofollow" target="_blank">here</a>.</p>
 <br>
-<h3>Database Schema</h3>
-<p><a href="https://en.wikipedia.org/wiki/PostgreSQL" rel="nofollow">PostgreSQL</a> was used to create the database for this application.</p>
-<p>The final database schema consists of four collections which include users, services, portfolio and orders.</p>
-<img src="media/readme-files/database.png" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
-<br>
 <h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"></a>Table of Contents</h2>
 <ol>
 <li>
 <p><a href="#ux"><strong>UX</strong></a></p>
 <ul>
+<li><a href="#db-schema"><strong>Database</strong></a></li>
 <li><a href="#user-stories"><strong>User Stories</strong></a></li>
 <li><a href="#design-choices"><strong>Design choices</strong></a></li>
 <li><a href="#wireframes"><strong>Wireframes</strong></a>
@@ -75,6 +71,11 @@
 <h2><a id="user-content-ux" class="anchor" aria-hidden="true" href="#ux"></a><strong>UX</strong></h2>
 <p>This project is part of my <a href="https://codeinstitute.net/" rel="nofollow" target="_blank">Code Institute</a> Full Stack Software Development studies, specifically the Full Stack Frameworks module. The objective for this milestone project is to "Create a web application that allows users to discuss and order a specific graphic design or software development works to be carried out, where payment can be processed via the website, and email confirmatons and order history is provided to them".</p>
 <br>
+<h3><a id="db-schema" class="anchor" aria-hidden="true" href="#db-schema"></a>Database Schema</h3>
+<p><a href="https://en.wikipedia.org/wiki/PostgreSQL" rel="nofollow">PostgreSQL</a> was used to create the database for this application.</p>
+<p>The final database schema consists of four collections which include users, services, portfolio and orders.</p>
+<img src="media/readme-files/database.png" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
+<br>
 <h3><a id="user-content-user-stories" class="anchor" aria-hidden="true" href="#user-stories"></a>User stories</h3>
 <p>"<strong><em>As a user, I would like to</em></strong> _______________"</p>
 <p><g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> <em>successfully implemented</em></p>
@@ -98,24 +99,6 @@
 <li><g-emoji class="g-emoji" alias="x" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png">❌</g-emoji> <em>see</em> information on what's included with each <em>service</em>.</li>
 </ul>
 <h2><a id="user-content-design-choices" class="anchor" aria-hidden="true" href="#design-choices"></a>Design Choices</h2>
-<h3><a id="user-content-colours" class="anchor" aria-hidden="true" href="#colours"></a>Framework</h3>
-<ul>
-<li><a href="https://getbootstrap.com/" rel="nofollow">Bootstrap v5.0.0</a>
-<ul>
-<li>Although this framework is only in beta, I found it had some new smart features that older version did not have while also maintaining bootstraps modern and clean layout with its simple-to-understand documentation.</li>
-</ul>
-</li>
-<li><a href="https://code.jquery.com/jquery/" rel="nofollow">jQuery 3.5.1</a>
-<ul>
-<li>In an effort to keep the JavaScript minimal, I have decided to use jQuery in my my scripts framework.</li>
-</ul>
-</li>
-<li><a href="https://www.djangoproject.com/download/" rel="nofollow">Django 3.1.5</a>
-<ul>
-<li>Django is a free and open-source web framework that I've used to render the back-end Python with the front-end Bootstrap.</li>
-</ul>
-</li>
-</ul>
 <h3><a id="user-content-colours" class="anchor" aria-hidden="true" href="#colours"></a>Colours</h3>
 <ul>
 <li>
@@ -153,8 +136,12 @@
 </li>
 </ul>
 <h4><a id="user-content-variation-between-wireframes-and-final-product" class="anchor" aria-hidden="true" href="#variation-between-wireframes-and-final-product"></a>Variation Between Wireframes and Final Product</h4>
-<p>I only made a couple changes from the initial design plan, as certain things I feel didn't work while building the site:</p>
-<h5><a id="user-content-landing-page" class="anchor" aria-hidden="true" href="#landing-page"></a>Landing Page</h5>
+<p>I didn't really make many changes from the wireframes to the final product, as I wanted to follow the plan I had laid out. The few things I did change or add were:</p>
+<ul>
+<li>I added a google maps location on the contact page.</li>
+<li>I also added more of an introduction on the home-page which I hadn't originally planned, but I thought it gave better instruction to the user as to who/what the site was.</li>
+</ul>
+<h4><a id="user-content-landing-page" class="anchor" aria-hidden="true" href="#landing-page"></a>Landing Page</h4>
 <ul>
 <li>For the homescreen I changed to show multiple catergories with movie posters to engage users instantly, instead of having them navigate to a categorie.</li>
 </ul>
@@ -180,6 +167,9 @@
 <h3>Front End Technologies</h3>
 <ol>
 <li>
+<p><a href="https://getbootstrap.com/" rel="nofollow">Bootstrap v5.0.0</a> - Although this framework is only in beta, I found it had some new smart features that older version did not have while also maintaining bootstraps modern and clean layout with its simple-to-understand documentation.</p>
+</li>
+<li>
 <p><a href="https://en.wikipedia.org/wiki/HTML" rel="nofollow">HTML</a> - This was used for the overall structure of the website.</p>
 </li>
 <li>
@@ -189,7 +179,7 @@
 <p><a href="https://en.wikipedia.org/wiki/JavaScript" rel="nofollow">JavaScript</a> - This was mainly used to retrieve and display data from the API, but also a couple small animations i.e displaying the modals.</p>
 </li>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/JQuery" rel="nofollow">jQuery</a> - This was used in my javascript files to help achieve complex ideas in a simpler way.</p>
+<p><a href="https://en.wikipedia.org/wiki/JQuery" rel="nofollow">jQuery</a> - In an effort to keep the JavaScript minimal, I have decided to use jQuery in my my scripts.</p>
 </li>
 <li>
 <p><a href="https://getbootstrap.com/" rel="nofollow">Bootstrap5</a> - Used as the front-end framework for layout and design.</p>
@@ -216,7 +206,7 @@
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" rel="nofollow">Python3</a> - Used as the back-end programming language.</p>
 </li>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" rel="nofollow">Django 3.1.5</a> - Used as my Python web framework.</p>
+<p><a href="https://www.djangoproject.com/download/" rel="nofollow">Django 3.1.5</a> - Django is a free and open-source web framework that I've used to render the back-end Python with the front-end Bootstrap.</p>
 </li>
 <li>
 <p><a href="https://www.postgresql.org/" rel="nofollow">PostgreSQL</a> - Used to store all the data in an organised database.</p>
@@ -420,134 +410,21 @@
 <h3>Validators</h3>
 <p><strong>HTML</strong></p>
 <ul>
-<li><a href="https://validator.w3.org" rel="nofollow">W3C HTML Validator</a>
-<ul>
-<li>All <strong>.html</strong> files checked.</li>
-<li><strong>base.html</strong> file contained minor errors that have since been rectified (<em>Had a button element within an anchor element and type inside script tag for JS</em>). <a href="https://github.com/lewejuice/broad-designs/commit/master">Correction Commit: f1e7c6a301ede885654d9960234424e4716650ce</a></li>
-<li><strong>Error</strong>: Had a button element within an anchor element.</li>
-<li><strong>Error</strong>: Type inside script tag for JS.</li>
-<li>The remaining validation issues are all attributed to comments made with hyphens to organise sections of code:
-<ul>
-<li><strong>Warning</strong>: The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="https://validator.w3.org" rel="nofollow">W3C HTML Validator</a></li>
 </ul>
 <p><strong>CSS</strong></p>
 <ul>
-<li><a href="https://validator.w3.org" rel="nofollow">W3C CSS Validator</a>
-<ul>
-<li>The W3C Jigsaw validator does not yet recognize some bootstrap5 styling, and therefore passes 6 Parse Errors, 5 Unknown pseudo-element or pseudo-class and 5 Property doesn't exist. The sixteen Errors I've received  consisted of:
-<ul>
-<li><code>abbr[data-bs-original-title], abbr[title]</code></li>
-<li><code>.row</code></li>
-<li><code>	.table > :not(caption) > * > *</code></li>
-<li><code>.form-control::-webkit-file-upload-button</code></li>
-<li><code>.accordion-button</code></li>
-</ul>
-</li>
-<li>I also received 406 Warnings all from these bootstrap5 styling :
-<ul>
-<li><code>.custom-checkbox</code></li>
-<li><code>.custom-control-input:checked</code></li>
-<li><code>.custom-control-label::before</code></li>
-<li><code>Same color for background-color and border-color</code></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="https://validator.w3.org" rel="nofollow">W3C CSS Validator</a></li>
 </ul>
 <p><strong>JavaScript</strong></p>
-<li><a href="https://jshint.com/" rel="nofollow">JShint</a>
 <ul>
-<li><strong>stripe_elements.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/static/order/js/stripe_elements.js">file</a>:
-<ul>
-<li>METRICS:
-<ul>
-<li>There are <strong>5</strong> functions in this file. Function with the largest signature take <strong>1</strong> arguments, while the median is <strong>1</strong>. Largest function has <strong>14</strong> statements in it, while the median is <strong>5</strong>. The most complex function has a cyclomatic complexity value of <strong>3</strong> while the median is <strong>1</strong>..</li>
-</ul>
-</li>
-<li>UNDEFINED VARIABLES:
-<ul>
-<li><code>Stripe</code> (used for Stripe API)</li>
-<li><code>$</code> (used for jQuery)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>main.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/static/js/main.js">file</a>:
-<ul>
-<li>METRICS:
-<ul>
-<li>There are 6 functions in this file. Function with the largest signature take 1 arguments, while the median is 0. Largest function has 6 statements in it, while the median is 1.5. The most complex function has a cyclomatic complexity value of 1 while the median is 1.</li>
-</ul>
-</li>
-<li>UNDEFINED VARIABLES:
-<ul>
-<li><code>$</code> (used for jQuery)</li>
-<li><code>bootstrap</code> (used for bootstrap5)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>google_maps.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/contact/static/contact/js/google_maps.js">file</a>:
-<ul>
-<li>METRICS:
-<ul>
-<li>There is only one function in this file. It takes no arguments. This function contains 4 statements. Cyclomatic complexity number for this function is 1.</li>
-</ul>
-</li>
-<li>UNDEFINED VARIABLES:
-<ul>
-<li><code>$</code> (used for jQuery)</li>
-<li><code>google</code> (used for Google maps API)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="http://beautifytools.com/javascript-validator.php" rel="nofollow">Beautify Tools</a>
-<ul>
-<li><strong>stripe_elements.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/static/order/js/stripe_elements.js">file</a>:
-<ul>
-<li><em><code>Stripe</code> is not defined.</em></li>
-</ul>
-</li>
-<li><strong>main.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/static/js/main.js">file</a>:
-<ul>
-<li><code>$</code> is not defined.</li>
-<li><code>bootstrap</code> is not defined.</li>
-<li><em><code>Tawk_LoadStart</code> is defined but never used..</em></li>
-<li><em><code>toastList</code> is defined but never used..</em></li>
-<li><em><code>hideToast</code> is defined but never used..</em></li>
-</ul>
-</li>
-<li><strong>google_maps.js</strong> <a href="https://github.com/lewejuice/broad-designs/blob/master/contact/static/contact/js/google_maps.js">file</a>:
-<ul>
-<li><em><code>google</code> is not defined.</em></li>
-<li><code>$</code> is not defined.</li>
-<li><em><code>beachMarker</code> is defined but never used.</em></li>
-<li><em><code>mapsApiKey</code> is defined but never used.</em></li>
-<li><em><code>initMap</code> is defined but never used..</em></li>
-</ul>
-</li>
+<li><a href="https://jshint.com/" rel="nofollow">JShint</a></li>
+<li><a href="http://beautifytools.com/javascript-validator.php" rel="nofollow">Beautify Tools</a></li>
 </ul>
 </li>
 <p><strong>Python</strong></p>
 <ul>
-<li><a href="http://pep8online.com/" rel="nofollow">PEP8 Online</a>
-<ul>
-<li>All <strong>71 .py</strong> files checked.</li>
-<li>Entirely <strong>PEP8 compliant</strong> with one exception:
-<ul>
-<li><code>webhooks.py</code> <a href="https://github.com/lewejuice/broad-designs/blob/master/order/webhooks.py">file</a> (I have one line too long on line 43, as I cant find a way to indent it.)</li>
-<li><em>line too long (&gt;79 characters)</em> -  <code>'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,</code> x4</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="http://pep8online.com/" rel="nofollow">PEP8 Online</a></li>
 </ul>
 <h3>Compatibility</h3>
 <p>To ensure a broad range of users can successfully use the site, I tested it across the 6 major browsers in both desktop and mobile configuration.</p>
@@ -569,6 +446,131 @@
 <summary>CLICK HERE to expand the full <b>Coverage Report</b></summary>
 <img src="media/readme-files/coverage.png" alt="Audit Report" title="Audit Report" style="max-width:100%;">
 </details>
+<h3>Bugs</h3>
+<h4>HTML</h4>
+<ul>
+<li>All <strong>.html</strong> files checked.</li>
+<li><strong>base.html</strong> file contained minor errors that have since been rectified (<em>Had a button element within an anchor element and type inside script tag for JS</em>). <a href="https://github.com/lewejuice/broad-designs/commit/master">Correction Commit: f1e7c6a301ede885654d9960234424e4716650ce</a></li>
+<li><strong>Error</strong>: Had a button element within an anchor element.</li>
+<li><strong>Error</strong>: Type inside script tag for JS.</li>
+<li>The remaining validation issues are all attributed to comments made with hyphens to organise sections of code:
+<ul>
+<li><strong>Warning</strong>: The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.</li>
+</ul>
+</li>
+</ul>
+<h4>CSS</h4>
+<ul>
+<li>No bugs found.</li>
+</ul>
+<h4>JavaScript</h4>
+<ul>
+<li>One bug was found - Using devtools, I saw a function was being called on every page for the homescreen code/design hover animation, and was causing the tawk.to chat app not to render on other pages.</li>
+<li>Fix - I moved the function into the html file for the homepage.</li>
+</ul>
+<h4>Python</h4>
+<ul>
+<li>No bugs were found.</li>
+</ul>
+
+
+
+
+
+<h3>Testing against user stories</h3>
+<p>"As a user, I would like to _______________"</p>
+<ol>
+<li>
+<p>view the site from any device (mobile, tablet, desktop).</p>
+<ul>
+<li>I have made the site compatible with many different screen sizes and devices.</li>
+</ul>
+</li>
+<li>
+<p>see information on what services the site provides.</p>
+<ul>
+<li>I have created a "What we do" page to list all the services that the site offers.</li>
+</ul>
+</li>
+<li>
+<p>have exclusive services for account holders.</p>
+<ul>
+<li>You can only progress with an order if you have an account.</li>
+</ul>
+</li>
+<li>
+<p>create my own profile.</p>
+<ul>
+<li>Anyone with an email address can create an account.</li>
+</ul>
+</li>
+<li>
+<p>update my profile information.</p>
+<ul>
+<li>Users can update their information via their profile page.</li>
+</ul>
+</li>
+<li>
+<p>view a portfolio of work that has been done in a clear and simple way.</p>
+<ul>
+<li>Two portfolio pages are available to view, one for design and one for coding work.</li>
+</ul>
+</li>
+<li>
+<p>process my orders with ease.</p>
+<ul>
+<li>I have made the order process simple and straight forward.</li>
+</ul>
+</li>
+<li>
+<p>submit my own questions in a fast and reliable way.</p>
+<ul>
+<li>Users have two options to get in contact, either via an instant chat app or a contact form they can fill in.</li>
+</ul>
+</li>
+<li>
+<p>find the location of the buisness and have their address if need be.</p>
+<ul>
+<li>On the footer of every page is the address, but also on the contact page is a map to the location of company.</li>
+</ul>
+</li>
+<li>
+<p>forgot password functionality for security and to stop being locked out of my account.</p>
+<ul>
+<li>Any user can reset their password via the forgot password link, which will be sent to their email.</li>
+</ul>
+</li>
+<li>
+<p>be able to log out.</p>
+<ul>
+<li>A logout button is found in the navbar under account.</li>
+</ul>
+</li>
+<li>
+<p>be able to change my password.</p>
+<ul>
+<li>Users can reset their password via the forgot password link only, I have not yet implemented a way for the user to change it any other way.</li>
+</ul>
+</li>
+<li>
+<p>see an updated total as I add services to my order.</p>
+<ul>
+<li>The price displayed on all screens is always an up to date total of all services in the order.</li>
+</ul>
+</li>
+<li>
+<p>recieve email confirmations of my orders.</p>
+<ul>
+<li>Email confirmations are always issued at the end of the transaction.</li>
+</ul>
+</li>
+<li>
+<p>upload a useful image with my order like a logo or design inspiration.</p>
+<ul>
+<li>Users can upload useful images in the order form.</li>
+</ul>
+</li>
+</ol>
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
 <p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through <a href="https://github.com/lewejuice/broad-designs">repository in GitHub</a>.</p>
 <p>The live site was deployed via <a href="https://www.heroku.com/" rel="nofollow">Heroku</a>. The deployed site will update when pushed from to heroku via gitpod terminal. The Heroku app location can be found <a href="https://broad-designs.herokuapp.com/">here.</a></p>
@@ -577,6 +579,8 @@
 <li><strong>css/</strong>
 <ul>
 <li><em><a href="https://github.com/lewejuice/broad-designs/blob/master/static/css/base.css">base.css</a></em></li>
+<li><em><a href="https://github.com/lewejuice/broad-designs/tree/master/order/static/order/css">order.css</a></em></li>
+<li><em><a href="https://github.com/lewejuice/broad-designs/blob/master/profiles/static/profiles/css/profiles.css">profiles.css</a></em></li>
 </ul>
 </li>
 <li><strong>media/</strong>
@@ -623,11 +627,6 @@
 <li><code>pip3 -r requirements.txt</code></li>
 </ul>
 </li>
-<li>In the IDE terminal, use the following command to launch the Django project:
-<ul>
-<li><code>python3 manage.py runserver</code></li>
-</ul>
-</li>
 <li>The Django server should be running locally now on <strong><a href="http://127.0.0.1:8000" rel="nofollow">http://127.0.0.1:8000</a></strong> (or similar). If it doesn't automatically open, you can copy/paste it into your browser of choice.</li>
 <li>When you run the Django server for the first time, it should create a new <em>SQLite3</em> database file: <strong>db.sqlite3</strong></li>
 <li>Next, you'll need to make migrations to create the database schema:
@@ -642,9 +641,13 @@
 <li>(assign an admin username, email, and secure password)</li>
 </ul>
 </li>
+<li>In the IDE terminal, use the following command to launch the Django project:
+<ul>
+<li><code>python3 manage.py runserver</code></li>
 </ul>
-<p>Once the database migrations and superuser have been successfully completed, Django should migrate the existing migrations.py files from each app to configure the following relational schema:</p>
-<img src="media/readme-files/database.png" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
+</li>
+</ul>
+<p>Once the database migrations and superuser have been successfully completed, Django should migrate the existing migrations.py files from each app to configure the database.</p>
 <h3 id="user-content-remote-deployment" class="anchor" aria-hidden="true" href="#remote-deployment">Remote Deployment</h3>
 <p>This site is currently deployed on Heroku using the main branch on GitHub. Once you have the project setup locally, you can proceed to deploy it remotely with the following steps:</p>
 
@@ -664,12 +667,6 @@
 <li>Sign up for a free Heroku account, create your project app, and click the <strong>Deploy</strong> tab, at which point you can <em>Connect GitHub</em> as the Deployment Method, and select <em>Enable Automatic Deployment</em>.</li>
 <li>In the Heroku <strong>Resources</strong> tab, navigate to the <em>Add-Ons</em> section and search for <strong>Heroku Postgres</strong>. Make sure to select the free <em>Hobby</em> level. This will allow you to have a remote database instead of using the local sqlite3 database, and can be found in the Settings tab. You'll need to update your <em>.env</em> file with your new <em>database-url</em> details.</li>
 <li>In the Heroku <strong>Settings</strong> tab, click on the <em>Reveal Config Vars</em> button to configure environmental variables. You will need to copy all of the enviroment variables key value pairs from your gitpod settings, into the config variables, but please omit the <em>development=True</em> variable; this is only for local deployment.</li>
-<li>Still within the <strong>Settings</strong> tab, find the <em>Buildpacks</em> section and add the following two buildpacks below. This is because the main project lives in a subdirectory. Note: the order these are added is important:
-<ul>
-<li><code>https://github.com/timanovsky/subdir-heroku-buildpack.git</code></li>
-<li><code>heroku/python</code></li>
-</ul>
-</li>
 <li>Your app should be successfully deployed to Heroku at this point, but you're not quite finished yet!</li>
 <li>Update the <em>settings.py</em> file to connect the remote database using this Python package: <code>dj_database_url</code></li>
 <li>Re-build the migrations and create a superuser to your new remote database using the instructions in the <em>local deployment</em> section above.</li>

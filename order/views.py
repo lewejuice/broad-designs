@@ -95,7 +95,7 @@ def order(request):
                                     args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+                Please makesure all fields are correct.')
     else:
         order = request.session.get('order', {})
         if not order:

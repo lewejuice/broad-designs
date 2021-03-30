@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="center grey-back error-container">
+        <h1 class="error-type white">4 <img class="error-logo" src="{{ MEDIA_URL }}bdesignlogo.png" alt="Broad Designs"> 4</h1>
+        <div>
+            <p class="oops-line white">Oops... We can't seem to find the page your looking for.</p>
+            <a class="choice-btn btn btn-success" href="{% url 'home' %}">Home</a>
+            <a class="choice-btn btn btn-primary" href="{% url 'contact' %}">Contact Us</a>
+        </div>
+    </div>
+{% endblock %}

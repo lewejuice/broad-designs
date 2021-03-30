@@ -78,4 +78,27 @@
         <h3 class="white">Bring your ideas to life, and click here to start your project with us.</h3>
         <a class="btn btn-primary get-quote-btn" href="{% url 'bagged_services' %}">CREATE ORDER</a>
     </div>
+
+    <script>
+        // Design/Code fade homescreen function
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const container = document.querySelector(".dc-container");
+
+        left.addEventListener("mouseenter", () => {
+            container.classList.add("hover-left");
+        });
+
+        left.addEventListener("mouseleave", () => {
+            container.classList.remove("hover-left");
+        });
+
+        right.addEventListener("mouseenter", () => {
+            container.classList.add("hover-right");
+        });
+
+        right.addEventListener("mouseleave", () => {
+            container.classList.remove("hover-right");
+        });
+    </script>
 {% endblock %}

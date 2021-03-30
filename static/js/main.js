@@ -20,28 +20,6 @@ $('#btnradio3').click(function() {
     $('#code-service-icons').css("display", "block");
 });
 
-// Design/Code fade homescreen function
-
-const left = document.querySelector(".left");
-const right = document.querySelector(".right");
-const container = document.querySelector(".dc-container");
-
-left.addEventListener("mouseenter", () => {
-    container.classList.add("hover-left");
-});
-
-left.addEventListener("mouseleave", () => {
-    container.classList.remove("hover-left");
-});
-
-right.addEventListener("mouseenter", () => {
-    container.classList.add("hover-right");
-});
-
-right.addEventListener("mouseleave", () => {
-    container.classList.remove("hover-right");
-});
-
 // Start of Tawk.to Script
 var Tawk_API = Tawk_API || {},
     Tawk_LoadStart = new Date();
